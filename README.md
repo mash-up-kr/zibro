@@ -42,7 +42,7 @@ npm run test
 
 👤 **조애리**
 
-* Github: [@](https://github.com/aereeeee)
+* Github: [@aereeeee](https://github.com/aereeeee)
 
 👤 **김유정**
 
