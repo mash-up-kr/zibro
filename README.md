@@ -36,13 +36,17 @@ npm run test
 
 ## Author
 
-👤 **chayeoi**
+👤 **김찬연**
 
-* Github: [@mash-up-kr](https://github.com/mash-up-kr)
+* Github: [@chayeoi](https://github.com/chayeoi)
 
-## 🤝 Contributing
+👤 **조애리**
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/mash-up-kr/zibro/issues).
+* Github: [@](https://github.com/aereeeee)
+
+👤 **김유정**
+
+* Github: [@YuChocopie](https://github.com/YuChocopie)
 
 ## Show your support
 
@@ -50,7 +54,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2019 [chayeoi](https://github.com/mash-up-kr).<br />
+Copyright © 2019 [Mash-Up](https://github.com/mash-up-kr).<br />
 This project is [MIT](https://github.com/mash-up-kr/zibro/blob/master/LICENSE) licensed.
 
 ***
