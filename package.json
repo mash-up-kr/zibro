@@ -4,7 +4,7 @@
   "description": "막차 시간을 넘긴 청춘들을 위한 교통비 최적화 정보 제공 서비스",
   "author": "chayeoi",
   "license": "MIT",
-  "homepage": "https://github.com/mash-up-kr/zibro",
+  "homepage": "https://zibro.netlify.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mash-up-kr/zibro.git"
@@ -47,6 +47,7 @@
     "@craco/craco": "^5.2.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.11.1",
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
