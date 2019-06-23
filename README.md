@@ -16,10 +16,6 @@
 
 ### 🏠 [Homepage](https://github.com/mash-up-kr/zibro)
 
-## Demo
-
-[데모 링크](https://zibro.netlify.com)
-
 ## Install
 
 ```sh
