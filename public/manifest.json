@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "집으로",
+  "name": "집으로: 막차 시간을 넘긴 청춘들을 위한 교통비 최적화 정보 제공 서비스",
   "icons": [
     {
       "src": "favicon.ico",
