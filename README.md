@@ -34,6 +34,24 @@ npm run start
 npm run test
 ```
 
+## Technologies
+
+| **Tech** | **Description** |
+|----------|-------|
+| [React](https://facebook.github.io/react/) | A declarative, efficient, and flexible JavaScript library for building user interfaces. |
+| [Create React App](https://facebook.github.io/create-react-app/) | Create React apps with no build configuration. |
+| [Redux](https://redux.js.org) | Predictable state container for JavaScript apps |
+| [Redux Saga](https://redux-saga.js.org/) | An alternative side effect model for Redux apps |
+| [React Router](https://reacttraining.com/react-router/) | Declarative routing for React |
+| [Immer](https://github.com/immerjs/immer) | Create the next immutable state by mutating the current one |
+| [Styled Components](https://www.styled-components.com/) | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress |
+| [ESLint](https://eslint.org/) | The pluggable linting utility for JavaScript and JSX |
+| [Editor Config](https://editorconfig.org) | EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. |
+| [Craco](https://github.com/sharegate/craco) | Create React App Configuration Override, an easy and comprehensible configuration layer for create-react-app |
+| [Husky](https://github.com/typicode/husky) | Prevent bad git commit, git push and more 🐶 woof! |
+| [Commitlint](https://commitlint.js.org) | Lint commit messages |
+| [Standard Version](https://github.com/conventional-changelog/standard-version) | Automate versioning and CHANGELOG generation |
+
 ## Author
 
 👤 **김찬연**
@@ -48,14 +66,7 @@ npm run test
 
 * Github: [@YuChocopie](https://github.com/YuChocopie)
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
 ## 📝 License
 
 Copyright © 2019 [Mash-Up](https://github.com/mash-up-kr).<br />
 This project is [MIT](https://github.com/mash-up-kr/zibro/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
