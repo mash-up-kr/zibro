@@ -16,6 +16,10 @@
 
 ### 🏠 [Homepage](https://github.com/mash-up-kr/zibro)
 
+## Demo
+
+[데모 링크](https://zibro.netlify.com)
+
 ## Install
 
 ```sh
@@ -65,6 +69,10 @@ npm run test
 👤 **김유정**
 
 * Github: [@YuChocopie](https://github.com/YuChocopie)
+
+👤 **김동현**
+
+* Github: [@wplong11](https://github.com/wplong11)
 
 ## 📝 License
 
