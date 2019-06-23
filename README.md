@@ -49,6 +49,7 @@ npm run test
 | [React Router](https://reacttraining.com/react-router/) | Declarative routing for React |
 | [Immer](https://github.com/immerjs/immer) | Create the next immutable state by mutating the current one |
 | [Styled Components](https://www.styled-components.com/) | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress |
+| [Material UI](https://material-ui.com/) | React components that implement Google's Material Design. |
 | [ESLint](https://eslint.org/) | The pluggable linting utility for JavaScript and JSX |
 | [Editor Config](https://editorconfig.org) | EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. |
 | [Craco](https://github.com/sharegate/craco) | Create React App Configuration Override, an easy and comprehensible configuration layer for create-react-app |
