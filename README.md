@@ -14,7 +14,7 @@
 
 > 막차 시간을 넘긴 청춘들을 위한 교통비 최적화 정보 제공 서비스
 
-### 🏠 [Homepage](https://github.com/mash-up-kr/zibro)
+### 🏠 [Homepage](https://zibro.netlify.com)
 
 ## Install
 
@@ -53,7 +53,7 @@ npm run test
 | [Commitlint](https://commitlint.js.org) | Lint commit messages |
 | [Standard Version](https://github.com/conventional-changelog/standard-version) | Automate versioning and CHANGELOG generation |
 
-## Author
+## Authors
 
 👤 **김찬연**
 
