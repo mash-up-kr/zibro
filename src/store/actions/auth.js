@@ -1,16 +1,16 @@
-export const SIGN_IN_REQUEST = 'auth/SIGN_IN_REQUEST';
-export const SIGN_IN_SUCCESS = 'auth/SIGN_IN_SUCCESS';
-export const SIGN_IN_FAILURE = 'auth/SIGN_IN_FAILURE';
+export const SIGN_IN_WITH_FACEBOOK_REQUEST = 'auth/SIGN_IN_WITH_FACEBOOK_REQUEST';
+export const SIGN_IN_WITH_FACEBOOK_SUCCESS = 'auth/SIGN_IN_WITH_FACEBOOK_SUCCESS';
+export const SIGN_IN_WITH_FACEBOOK_FAILURE = 'auth/SIGN_IN_WITH_FACEBOOK_FAILURE';
 
-export const signInRequest = (payload = {}) => ({
-  type: SIGN_IN_REQUEST,
+export const signInWithFacebookRequest = (payload = {}) => ({
+  type: SIGN_IN_WITH_FACEBOOK_REQUEST,
   payload,
 });
-export const signInSuccess = (payload = {}) => ({
-  type: SIGN_IN_SUCCESS,
+export const signInWithFacebookSuccess = (payload = {}) => ({
+  type: SIGN_IN_WITH_FACEBOOK_SUCCESS,
   payload,
 });
-export const signInFailure = (payload = {}) => ({
-  type: SIGN_IN_FAILURE,
+export const signInWithFacebookFailure = (payload = {}) => ({
+  type: SIGN_IN_WITH_FACEBOOK_FAILURE,
   payload,
 });
