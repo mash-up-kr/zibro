@@ -1,19 +1,36 @@
 import { hot } from 'react-hot-loader/root';
 import React, { Suspense } from 'react';
+import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { CssBaseline } from '@material-ui/core';
+import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import { Home } from './pages';
+import configureStore from './store';
+import { GlobalStyle, theme } from './styles';
 
+const store = configureStore();
 
 const App = () => (
-  <Router>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
-    </Suspense>
-  </Router>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <MuiThemeProvider theme={theme}>
+        <StylesProvider>
+          <GlobalStyle />
+          <CssBaseline />
+          <Router>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route exact path="/" component={Home} />
+              </Switch>
+            </Suspense>
+          </Router>
+        </StylesProvider>
+      </MuiThemeProvider>
+    </ThemeProvider>
+  </Provider>
 );
 
 export default hot(App);
