@@ -17,7 +17,7 @@ const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <MuiThemeProvider theme={theme}>
-        <StylesProvider>
+        <StylesProvider injectFirst>
           <GlobalStyle />
           <CssBaseline />
           <Router>
