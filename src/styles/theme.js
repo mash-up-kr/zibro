@@ -22,8 +22,12 @@ export default createMuiTheme({
     },
     sns: {
       kakao: '#ffdb00',
-      facebook: '#3e50b4',
+      facebook: '#4267b2',
       naver: '#00d73b',
+    },
+    action: {
+      selected: 'rgba(255, 255, 255, 0.08)',
+      hover: 'rgba(255, 255, 255, 0.04)',
     },
     grey: {
       50: '#fafafa',
@@ -76,6 +80,15 @@ export default createMuiTheme({
     ].join(','),
     button: {
       textTransform: 'initial',
+    },
+  },
+  overrides: {
+    MuiButton: {
+      text: {},
+      outlined: {},
+      contained: {
+        boxShadow: 'none',
+      },
     },
   },
 });

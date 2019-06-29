@@ -6,21 +6,20 @@ const S = {
   Button: styled(Button)`
     width: 100%;
     padding: 12px 16px;
-    border-radius: 0;
     color: ${({ theme }) => theme.palette.primary.contrastText};
-    background-color: ${({ theme }) => theme.palette.sns.facebook};
+    background-color: ${({ theme }) => theme.palette.sns.kakao};
     text-align: left;
   `,
 };
 
-const FacebookButton = props => (
+const KakaoSignInButton = props => (
   <S.Button
     type="button"
     variant="contained"
     {...props}
   >
-    페이스북으로 로그인하기
+    카카오톡으로 로그인하기
   </S.Button>
 );
 
-export default FacebookButton;
+export default KakaoSignInButton;
