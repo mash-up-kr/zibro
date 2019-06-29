@@ -1,0 +1,31 @@
+import React from 'react';
+import styled from 'styled-components';
+import { hero } from '../../assets';
+import { a11y } from '../../styles';
+
+const S = {
+  Wrapper: styled.div`
+    background: url(${hero}) center no-repeat;
+    background-size: 279px 157px;
+    height: 157px;
+  `,
+  Title: styled.h1`
+    ${a11y}
+  `,
+  Subtitle: styled.h2`
+    ${a11y}
+  `,
+};
+
+const AppTtitle = () => (
+  <S.Wrapper>
+    <S.Title>
+      집으로
+    </S.Title>
+    <S.Subtitle>
+      막차 시간을 넘긴 청춘들을 위한 교통비 최적화 서비스
+    </S.Subtitle>
+  </S.Wrapper>
+);
+
+export default AppTtitle;
