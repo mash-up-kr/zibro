@@ -7,7 +7,7 @@ export default createMuiTheme({
     },
     primary: {
       light: '',
-      main: '#3e50b4',
+      main: '#330099',
       contrastText: '#fff',
     },
     secondary: {
@@ -19,6 +19,15 @@ export default createMuiTheme({
       light: '',
       main: '#fff',
       contrastText: '#fff',
+    },
+    sns: {
+      kakao: '#ffdb00',
+      facebook: '#4267b2',
+      naver: '#00d73b',
+    },
+    action: {
+      selected: 'rgba(255, 255, 255, 0.08)',
+      hover: 'rgba(255, 255, 255, 0.04)',
     },
     grey: {
       50: '#fafafa',
@@ -71,6 +80,15 @@ export default createMuiTheme({
     ].join(','),
     button: {
       textTransform: 'initial',
+    },
+  },
+  overrides: {
+    MuiButton: {
+      text: {},
+      outlined: {},
+      contained: {
+        boxShadow: 'none',
+      },
     },
   },
 });
