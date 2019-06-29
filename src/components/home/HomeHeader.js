@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import {} from '../../assets';
 
 const S = {
   Wrapper: styled.div`
@@ -9,8 +8,8 @@ const S = {
     background-color: rgba(47, 62, 158, 0.28);
   `,
   Title: styled.div`
-    margin:0 auto;
-    padding-top:130px;
+    margin: 0 auto;
+    padding-top: 130px;
     height: 55px;
     font-family: NotoSansCJKkr;
     font-size: 15px;

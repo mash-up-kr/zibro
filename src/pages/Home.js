@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeHeader, HomeMenu } from '../components/home';
+import { HomeHeader, HomeMenu } from '../components';
 
 const Home = () => (
   <>

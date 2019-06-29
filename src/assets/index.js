@@ -1,2 +1,2 @@
-export { default as busicon } from './icon-bus.svg';
-export { default as timeicon } from './icon-time.svg';
+export { default as busIcon } from './icon-bus.svg';
+export { default as timeIcon } from './icon-time.svg';
