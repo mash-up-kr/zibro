@@ -46,6 +46,10 @@ npm run test
 | [Immer](https://github.com/immerjs/immer) | Create the next immutable state by mutating the current one |
 | [Styled Components](https://www.styled-components.com/) | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress |
 | [Material UI](https://material-ui.com/) | React components that implement Google's Material Design. |
+| [Axios](https://github.com/axios/axios) | Promise based HTTP client for the browser and node.js |
+| [Formik](https://jaredpalmer.com/formik/) | Build forms in React, without tears. |
+| [Day.js](https://github.com/iamkun/dayjs) | Day.js 2KB immutable date library alternative to Moment.js with the same modern API |
+| [React Hot Loader](http://gaearon.github.io/react-hot-loader/) | Tweak React components in real time. |
 | [ESLint](https://eslint.org/) | The pluggable linting utility for JavaScript and JSX |
 | [Editor Config](https://editorconfig.org) | EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. |
 | [Craco](https://github.com/sharegate/craco) | Create React App Configuration Override, an easy and comprehensible configuration layer for create-react-app |
