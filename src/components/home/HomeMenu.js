@@ -26,7 +26,7 @@ const HomeMenu = () => (
   <S.Wrapper>
     <S.Button variant="contained" color="primary">
       <S.Icon src={timeIcon} alt="time icon" />
-      <Link to="/reseve">막차알림 예약하기</Link>
+      <Link to="/reserve">막차알림 예약하기</Link>
     </S.Button>
     <S.Button variant="contained" color="primary">
       <S.Icon src={busIcon} alt="bus icon" />
