@@ -47,6 +47,7 @@ npm run test
 | [Styled Components](https://www.styled-components.com/) | Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress |
 | [Material UI](https://material-ui.com/) | React components that implement Google's Material Design. |
 | [Axios](https://github.com/axios/axios) | Promise based HTTP client for the browser and node.js |
+| [Lodash](https://lodash.com/) | A modern JavaScript utility library delivering modularity, performance & extras. |
 | [Formik](https://jaredpalmer.com/formik/) | Build forms in React, without tears. |
 | [Day.js](https://github.com/iamkun/dayjs) | Day.js 2KB immutable date library alternative to Moment.js with the same modern API |
 | [React Hot Loader](http://gaearon.github.io/react-hot-loader/) | Tweak React components in real time. |
