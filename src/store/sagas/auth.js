@@ -1,15 +1,22 @@
 import { call, put, take } from 'redux-saga/effects';
 import { auth as authActions } from '../actions';
-import { auth as authApis } from '../../apis';
+import { firebase } from '../../utils';
 
 export function* signInWithFacebook() {
   while (true) {
     try {
-      const action = yield take(authActions.SIGN_IN_WITH_FACEBOOK_REQUEST);
+      yield take(authActions.SIGN_IN_WITH_FACEBOOK_REQUEST);
 
-      const response = yield call(authApis.signInWithFacebook, action.payload);
+      const authProvider = firebase.auth.facebookAuthProvider();
 
-      yield put(authActions.signInWithFacebookSuccess(response.data));
+      const result = yield call(firebase.auth.signInWithPopup, authProvider);
+
+      const user = {
+        accessToken: result.credential.accessToken,
+        user: result.user,
+      };
+
+      yield put(authActions.signInWithFacebookSuccess(user));
     } catch (error) {
       yield put(authActions.signInWithFacebookFailure(error));
     }
