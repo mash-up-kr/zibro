@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { hero } from '../../assets';
 import { a11y } from '../../styles';
@@ -7,6 +8,7 @@ const S = {
   Wrapper: styled.div`
     background: url(${hero}) center no-repeat;
     background-size: 279px 157px;
+    width: 279px;
     height: 157px;
   `,
   Title: styled.h1`
@@ -17,8 +19,8 @@ const S = {
   `,
 };
 
-const AppTtitle = () => (
-  <S.Wrapper>
+const AppTitle = ({ className }) => (
+  <S.Wrapper className={className}>
     <S.Title>
       집으로
     </S.Title>
@@ -28,4 +30,12 @@ const AppTtitle = () => (
   </S.Wrapper>
 );
 
-export default AppTtitle;
+AppTitle.propTypes = {
+  className: PropTypes.string,
+};
+
+AppTitle.defaultProps = {
+  className: undefined,
+};
+
+export default AppTitle;

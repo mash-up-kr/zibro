@@ -7,7 +7,7 @@ export default createMuiTheme({
     },
     primary: {
       light: '',
-      main: '#fff',
+      main: '#330099',
       contrastText: '#fff',
     },
     secondary: {
@@ -19,6 +19,11 @@ export default createMuiTheme({
       light: '',
       main: '#fff',
       contrastText: '#fff',
+    },
+    sns: {
+      kakao: '#ffdb00',
+      facebook: '#3e50b4',
+      naver: '#00d73b',
     },
     grey: {
       50: '#fafafa',
