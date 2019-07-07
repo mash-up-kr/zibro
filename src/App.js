@@ -7,7 +7,9 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import { Home, Reserve, SignIn } from './pages';
+import {
+  Home, Location, Reserve, SignIn,
+} from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
 
@@ -26,6 +28,7 @@ const App = () => (
                 <Route exact path="/" component={Home} />
                 <Route exact path="/reserve" component={Reserve} />
                 <Route exact path="/sign-in" component={SignIn} />
+                <Route exact path="/location" component={Location} />
               </Switch>
             </Suspense>
           </Router>
