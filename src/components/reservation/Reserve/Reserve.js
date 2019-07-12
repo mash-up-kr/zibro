@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import { placeIcon } from '../../assets';
+import { placeIcon } from '../../../assets';
 
 
 const S = {
@@ -12,7 +12,7 @@ const S = {
   `,
   Icon: styled.img`
   width: 24px;
-  hegiht: 24px;
+  height: 24px;
   object-fit: contain;
 `,
   ChangeBox: styled.div`
@@ -35,7 +35,6 @@ const S = {
     background-color: #ffffff;
     text-align: center;
     padding: 50px 16px 16px 16px;
-  }
   `,
   ContentText: styled.div`
   font-size: 25px;

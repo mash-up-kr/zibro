@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { Reservation } from '../components';
+import { Reserve } from '../components';
 
 const useStyles = makeStyles({
   root: {
@@ -13,8 +13,9 @@ const useStyles = makeStyles({
 });
 
 
-const Reserve = () => {
+const Reservation = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="primary" className={classes.appbar}>
@@ -24,9 +25,9 @@ const Reserve = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Reservation />
+      <Reserve />
     </div>
   );
 };
 
-export default Reserve;
+export default Reservation;
