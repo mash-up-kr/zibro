@@ -9,7 +9,7 @@ import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import { Layout } from './components';
 import {
-  Home, Location, NotFound, SignIn,
+  Home, Location, NotFound, Notifications, Profile, SignIn,
 } from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
@@ -26,18 +26,20 @@ const App = () => (
           <Router>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route exact path={['/', 'location']}>
+                <Route exact path={['/', '/location', '/notifications', '/profile']}>
                   <Layout>
                     <Switch>
                       <Route exact path="/" component={Home} />
                       <Route exact path="/location" component={Location} />
+                      <Route exact path="/notifications" component={Notifications} />
+                      <Route exact path="/profile" component={Profile} />
                       <Redirect to="/not-found" />
                     </Switch>
                   </Layout>
                 </Route>
                 <Route exact path="/sign-in" component={SignIn} />
                 <Route exact path="/not-found" component={NotFound} />
-                <Redirect to="not-found" />
+                <Redirect to="/not-found" />
               </Switch>
             </Suspense>
           </Router>
