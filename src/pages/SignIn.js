@@ -1,9 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import {
-  AppTitle, FacebookSignInButton, KakaoSignInButton, NaverSignInButton,
-} from '../components';
+import { AppTitle, FacebookSignInButton } from '../components';
 import { auth as authActions } from '../store/actions';
 
 const S = {
@@ -17,9 +15,6 @@ const S = {
   `,
   AppTitle: styled(AppTitle)`
     margin-bottom: 10vh;
-  `,
-  KakaoSignInButton: styled(KakaoSignInButton)`
-    margin-bottom: 1vh;
   `,
   FacebookSignInButton: styled(FacebookSignInButton)`
     margin-bottom: 1vh;
@@ -36,9 +31,7 @@ const SignIn = () => {
   return (
     <S.Wrapper>
       <S.AppTitle />
-      <S.KakaoSignInButton onClick={signInWithFacebook} />
       <S.FacebookSignInButton onClick={signInWithFacebook} />
-      <NaverSignInButton onClick={signInWithFacebook} />
     </S.Wrapper>
   );
 };
