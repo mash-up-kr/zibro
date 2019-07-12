@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { hero } from '../../assets';
-import { a11y } from '../../styles';
+import { hero } from '../../../assets';
+import { a11y } from '../../../styles';
 
 const S = {
   Wrapper: styled.div`
+    width: 280px;
+    height: 0;
+    padding-top: 160px;
     background: url(${hero}) center no-repeat;
-    background-size: 279px 157px;
-    width: 279px;
-    height: 157px;
+    background-size: 280px 160px;
   `,
   Title: styled.h1`
     ${a11y}

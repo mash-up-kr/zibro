@@ -1,2 +1,3 @@
 export { default as AppTitle } from './AppTitle';
-export { default as FacebookSignInButton } from './FacebookSignInButton';
+export { default as SignInWithGoogleButton } from './SignInWithGoogleButton';
+export { default as SignInWithFacebookButton } from './SignInWithFacebookButton';

@@ -1,28 +1,35 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { AppTitle, FacebookSignInButton } from '../components';
+import { AppTitle, SignInWithFacebookButton, SignInWithGoogleButton } from '../components/sign-in';
 import { auth as authActions } from '../store/actions';
 
 const S = {
   Wrapper: styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
-    padding: 0 4.5%;
+    padding: 20vh 0 12vh;
   `,
   AppTitle: styled(AppTitle)`
-    margin-bottom: 10vh;
+    margin-bottom: 24vh;
   `,
-  FacebookSignInButton: styled(FacebookSignInButton)`
-    margin-bottom: 1vh;
+  ButtonGroup: styled.div`
+    width: 90%;
+    & > :not(:last-child) {
+      margin-bottom: 16px;
+    }
   `,
 };
 
 const SignIn = () => {
   const dispatch = useDispatch();
+
+  const signInWithGoogle = useCallback(() => {
+    dispatch(authActions.signInWithGoogleRequest());
+  }, [dispatch]);
 
   const signInWithFacebook = useCallback(() => {
     dispatch(authActions.signInWithFacebookRequest());
@@ -31,7 +38,10 @@ const SignIn = () => {
   return (
     <S.Wrapper>
       <S.AppTitle />
-      <S.FacebookSignInButton onClick={signInWithFacebook} />
+      <S.ButtonGroup>
+        <SignInWithGoogleButton type="button" onClick={signInWithGoogle} />
+        <SignInWithFacebookButton type="button" onClick={signInWithFacebook} />
+      </S.ButtonGroup>
     </S.Wrapper>
   );
 };
