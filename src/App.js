@@ -9,7 +9,7 @@ import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import { Layout } from './components';
 import {
-  Home, Location, NotFound, Notifications, Profile, SignIn,
+  Home, Location, NotFound, Notifications, Profile, Reservem, SignIn,
 } from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
@@ -37,6 +37,7 @@ const App = () => (
                     </Switch>
                   </Layout>
                 </Route>
+                <Route exact path="/reserve" component={Reserve} />
                 <Route exact path="/sign-in" component={SignIn} />
                 <Route exact path="/not-found" component={NotFound} />
                 <Redirect to="/not-found" />
