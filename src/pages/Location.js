@@ -3,11 +3,13 @@ import { SearchField } from '../components';
 
 const Location = () => {
   const [value, setValue] = useState('');
-  const handleChange = useCallback(() => setValue(), []);
+
+  const handleChange = useCallback(event => setValue(event.target.value), []);
+  const handleClear = useCallback(() => setValue(''), []);
 
   return (
     <div>
-      <SearchField value={value} onChange={handleChange} />
+      <SearchField value={value} onChange={handleChange} onClear={handleClear} />
     </div>
   );
 };

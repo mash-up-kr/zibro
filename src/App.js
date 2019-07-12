@@ -2,12 +2,15 @@ import { hot } from 'react-hot-loader/root';
 import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import {
-  BrowserRouter as Router, Route, Switch,
+  Redirect, Route, BrowserRouter as Router, Switch,
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import { Home, Location, SignIn } from './pages';
+import { Layout } from './components';
+import {
+  Home, Location, NotFound, SignIn,
+} from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
 
@@ -23,9 +26,18 @@ const App = () => (
           <Router>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route exact path="/" component={Home} />
+                <Route exact path={['/', 'location']}>
+                  <Layout>
+                    <Switch>
+                      <Route exact path="/" component={Home} />
+                      <Route exact path="/location" component={Location} />
+                      <Redirect to="/not-found" />
+                    </Switch>
+                  </Layout>
+                </Route>
                 <Route exact path="/sign-in" component={SignIn} />
-                <Route exact path="/location" component={Location} />
+                <Route exact path="/not-found" component={NotFound} />
+                <Redirect to="not-found" />
               </Switch>
             </Suspense>
           </Router>

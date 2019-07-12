@@ -1,4 +1,4 @@
 export * from './base';
 export * from './common';
 export * from './home';
-export * from './signIn';
+export * from './sign-in';
