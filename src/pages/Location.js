@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { BackButton, SearchField } from '../components';
+import { BackButton, SearchField } from '../components/location';
 
 const S = {
   FieldGroup: styled.div`
@@ -23,10 +23,12 @@ const Location = () => {
 
   return (
     <div>
-      <S.FieldGroup>
-        <SearchField value={value} onChange={handleChange} onClear={handleClear} />
-        <SearchField value={value} onChange={handleChange} onClear={handleClear} />
-      </S.FieldGroup>
+      <main>
+        <S.FieldGroup>
+          <SearchField value={value} onChange={handleChange} onClear={handleClear} />
+          <SearchField value={value} onChange={handleChange} onClear={handleClear} />
+        </S.FieldGroup>
+      </main>
     </div>
   );
 };
