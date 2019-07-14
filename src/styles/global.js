@@ -2,8 +2,20 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Apple SD Gothic Neo', 'Nanum Gothic', 나눔고딕, NanumGothic, 돋움, Dotum, 굴림, Gulim, Helvetica, sans-serif;
+    font-family:
+      'Noto Sans KR',
+      'Apple SD Gothic Neo',
+      'Nanum Gothic',
+      나눔고딕,
+      NanumGothic,
+      돋움,
+      Dotum,
+      굴림,
+      Gulim,
+      Helvetica,
+      sans-serif;
     line-height: normal;
+    word-breaK: keep-all;
     overscroll-behavior: none;
   }
 

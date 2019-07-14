@@ -7,12 +7,16 @@ import { findIndex } from 'lodash/fp';
 
 const pathnames = [
   '/location',
-  '/notifications',
+  '/',
   '/profile',
 ];
 
+// TODO: BottomNavigation으로 교체 요망
 const Navigation = ({ location }) => {
-  const [value, setValue] = useState(() => findIndex(pathname => pathname === location.pathname, pathnames));
+  const [value, setValue] = useState(() => findIndex(
+    pathname => pathname === location.pathname,
+    pathnames,
+  ));
 
   const handleChange = useCallback((event, newValue) => setValue(newValue), []);
 
@@ -33,7 +37,7 @@ const Navigation = ({ location }) => {
         />
         <Tab
           component={Link}
-          to="/notifications"
+          to="/"
           icon={<InsertInvitation />}
           label="막차 알람"
         />

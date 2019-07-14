@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import { FacebookIcon } from '../../../assets';
+import { hexToRgb } from '../../../utils';
 
 const S = {
   Button: styled(Button)`
@@ -13,6 +14,9 @@ const S = {
     color: ${({ theme }) => theme.palette.primary.contrastText};
     background-color: ${({ theme }) => theme.palette.sns.facebook};
     font-size: ${({ theme }) => theme.typography.pxToRem(14)};
+    :hover {
+      background-color: ${({ theme }) => hexToRgb(theme.palette.primary.main, 0.9)};
+    }
   `,
   FacebookIcon: styled(FacebookIcon)`
     position: absolute;
