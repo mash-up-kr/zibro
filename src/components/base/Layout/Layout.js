@@ -9,7 +9,7 @@ const S = {
     flex-direction: column;
     height: 100vh;
   `,
-  Main: styled.main`
+  Content: styled.div`
     flex-grow: 1;
   `,
   Navigation: styled(Navigation)`
@@ -19,9 +19,9 @@ const S = {
 
 const Layout = ({ children }) => (
   <S.Wrapper>
-    <S.Main>
+    <S.Content>
       {children}
-    </S.Main>
+    </S.Content>
     <S.Navigation />
   </S.Wrapper>
 );
