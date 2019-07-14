@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { BackButton, SearchField } from '../components/location';
+import { BackButton, SearchField } from '../components/common';
 
 const S = {
   FieldGroup: styled.div`
