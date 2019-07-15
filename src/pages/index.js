@@ -7,3 +7,4 @@ export const Notifications = React.lazy(() => import('./Notifications'));
 export const Profile = React.lazy(() => import('./Profile'));
 export const Reservation = React.lazy(() => import('./Reservation'));
 export const SignIn = React.lazy(() => import('./SignIn'));
+export const ReserveDetail = React.lazy(() => import('./ReserveDetail'));

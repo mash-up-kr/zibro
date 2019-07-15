@@ -21,7 +21,7 @@ const Reservation = () => {
       <AppBar position="static" color="primary" className={classes.appbar}>
         <Toolbar>
           <Typography variant="h6" color="inherit">
-            막차 알림 예약
+            예약하기
           </Typography>
         </Toolbar>
       </AppBar>
