@@ -11,7 +11,7 @@ const S = {
     border: solid 0.8px #2f3e9e;
     color: #2f3e9e;
     position:absolute;
-    right:47px;
+    right:40px;
 
   `,
 };

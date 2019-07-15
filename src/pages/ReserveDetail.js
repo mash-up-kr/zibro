@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { DateField, LocationField, CostField, RouteField, DetailRoute } from '../components/reservation-details';
+import { DateField, OriginField, DestinationField, RouteField, DetailRoute } from '../components/reservation-details';
 
 const useStyles = makeStyles({
   root: {
@@ -36,8 +36,8 @@ const ReserveDetail = () => {
         </Toolbar>
       </AppBar>
       <DateField />
-      <LocationField />
-      <CostField />
+      <OriginField />
+      <DestinationField />
       <RouteField/>
       <DetailRoute />
     </div>

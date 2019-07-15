@@ -7,9 +7,11 @@ import { eventIcon } from '../../../assets';
 
 const S = {
   Wrapper: styled.div`
-    margin-top:31px;
+    padding-top:25px;
+    padding-bottom:16px;
+    border-bottom:1px solid #d8d8d8;
     width: 100%;
-    padding-left:33px;
+    padding-left:24px;
     display:flex;
     align-items:start;
   `,

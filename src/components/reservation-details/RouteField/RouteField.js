@@ -7,9 +7,9 @@ import { placeIcon } from '../../../assets';
 
 const S = {
   Wrapper: styled.div`
-    margin-top:31px;
+    margin-top:18px;
     width: 100%;
-    padding-left:33px;
+    padding-left:24px;
     display:flex;
     align-items:start;
   `,

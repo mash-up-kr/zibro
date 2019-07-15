@@ -32,12 +32,25 @@ const S = {
   letter-spacing: 0.35px;
   color: #333333;
   `,
+  SubLabel: styled.div`
+  font-family: NotoSansCJKkr;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.35px;
+  color: #333333;
+  margin-top:4px;
+  `,
   Tag: styled.div`
   width: 30px;
   height: 16px;
+  margin-right:4px;
+  padding:2px 8px;
   background-color: #e01540;
   color:#fff;
-  font-size:9px;
+  font-size:11px;
   display:inline;
   `,
 
@@ -53,7 +66,7 @@ const DetailRoute = () => (
       <S.Icon src={taxiIcon} alt="taxi-icon" />
       <S.Label>
         강남역
-        <S.Label><S.Tag>광역</S.Tag>3013</S.Label>
+        <S.SubLabel><S.Tag>광역</S.Tag>3013</S.SubLabel>
       </S.Label>
     </S.Row>
     <S.Row>

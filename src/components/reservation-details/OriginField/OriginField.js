@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { a11y } from '../../../styles';
 import { ChangeButton } from '../ChangeButton'
-import { cardIcon } from '../../../assets';
+import { placeIcon } from '../../../assets';
 
 const S = {
   Wrapper: styled.div`
-    margin-top:25px;
-    padding-bottom:22px;
+    padding-top:18px;
+    padding-bottom:16px;
     border-bottom:1px solid #d8d8d8;
     width: 100%;
-    padding-left:33px;
+    padding-left:24px;
     display:flex;
     align-items:start;
   `,
@@ -34,16 +34,17 @@ const S = {
   `,
 };
 
-const ExpectedCost = () => {
+const OriginField = () => {
   return (
     <S.Wrapper>
-    <S.Icon src={cardIcon} alt="card-icon" />
+    <S.Icon src={placeIcon} alt="place-icon" />
     <div className={'changeRoute'}>
-      <S.Label>예상 비용</S.Label>
-      <S.Field>16,000원</S.Field>
+      <S.Label>출발지</S.Label>
+      <S.Field>강남역</S.Field>
     </div>
+    <ChangeButton/>
   </S.Wrapper>
   );
 };
 
-export default ExpectedCost;
+export default OriginField;
