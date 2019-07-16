@@ -7,7 +7,7 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import { Layout, PrivateRoute } from './components/base';
+import { Layout, PrivateRoute, PublicRoute } from './components/base';
 import {
   Home, Location, NotFound, Profile, Reservation, SignIn,
 } from './pages';
@@ -26,7 +26,7 @@ const App = () => (
           <Router>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route exact path={['/', '/location', '/notifications', '/profile']}>
+                <Route exact path={['/', '/location', '/profile']}>
                   <Layout>
                     <Switch>
                       <PrivateRoute exact path="/" component={Home} />
@@ -37,8 +37,8 @@ const App = () => (
                   </Layout>
                 </Route>
                 <PrivateRoute exact path="/reserve" component={Reservation} />
-                <PrivateRoute exact path="/sign-in" component={SignIn} />
-                <PrivateRoute exact path="/not-found" component={NotFound} />
+                <PublicRoute exact path="/sign-in" component={SignIn} />
+                <Route exact path="/not-found" component={NotFound} />
                 <Redirect to="/not-found" />
               </Switch>
             </Suspense>
