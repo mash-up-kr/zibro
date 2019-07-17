@@ -6,9 +6,9 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import { Layout, PrivateRoute, PublicRoute } from './components/base';
+import { Layout } from './components';
 import {
-  Home, Location, NotFound, Notifications, Profile, Reservation, SignIn, ReserveDetail
+  Home, Location, NotFound, Profile, Reserve, SignIn, ReservationDetails
 } from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
@@ -25,19 +25,19 @@ const App = () => (
           <Router>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route exact path={['/', '/location', '/notifications', '/profile', '/reserve', '/reservation-details']}>
+                <Route exact path={['/', '/location', '/profile', '/reserve', '/reservation-details']}>
                   <Layout>
                     <Switch>
                       <Route exact path="/" component={Home} />
                       <Route exact path="/location" component={Location} />
-                      <Route exact path="/notifications" component={Notifications} />
                       <Route exact path="/profile" component={Profile} />
-                      <Route exact path="/reserve" component={Reservation} />
-                      <Route exact path="/reservation-details" component={ReserveDetail} />
+                      <Route exact path="/reserve" component={Reserve} />
+                      <Route exact path="/reservation-details" component={ReservationDetails} />
                       <Redirect to="/not-found" />
                     </Switch>
                   </Layout>
                 </Route>
+
                 <Route exact path="/sign-in" component={SignIn} />
                 <Route exact path="/not-found" component={NotFound} />
                 <Redirect to="/not-found" />

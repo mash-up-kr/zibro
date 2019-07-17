@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { DateField, OriginField, DestinationField, AppBar } from '../components/common';
-import { RouteField, DetailRoute } from '../components/reservation-details';
+import { RouteField, DetailRoute } from '../components';
 
 const S = {
   Wrapper: styled.div`
@@ -10,7 +10,7 @@ const S = {
   `
 };
 
-const ReserveDetail = () => {
+const ReservationDetails = () => {
   return (
     <S.Wrapper>
       <AppBar
@@ -25,4 +25,4 @@ const ReserveDetail = () => {
   );
 };
 
-export default ReserveDetail;
+export default ReservationDetails;

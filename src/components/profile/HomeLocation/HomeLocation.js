@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { default as ChangeButton } from '../ChangeButton';
-import { placeIcon } from '../../../assets';
+import { ChangeButton } from '../../common';
+import { homeIcon } from '../../../assets';
 
 const S = {
   Wrapper: styled.div`
-    padding-top:18px;
+    padding-top:25px;
     padding-bottom:16px;
     border-bottom:1px solid #d7d9ec;
     width: 100%;
@@ -32,17 +32,15 @@ const S = {
   `,
 };
 
-const OriginField = () => {
-  return (
-    <S.Wrapper>
-    <S.Icon src={placeIcon} alt="place-icon" />
-    <div className={'changeRoute'}>
-      <S.Label>출발지</S.Label>
-      <S.Field>강남역</S.Field>
+const HomeLocation = () => (
+  <S.Wrapper>
+    <S.Icon src={homeIcon} alt="home-icon" />
+    <div className={'HomeLocation'}>
+      <S.Label>집 위치</S.Label>
+      <S.Field>서울시 강동구 송파동 234</S.Field>
     </div>
     <ChangeButton/>
   </S.Wrapper>
-  );
-};
+);
 
-export default OriginField;
+export default HomeLocation;

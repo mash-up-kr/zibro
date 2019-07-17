@@ -12,38 +12,38 @@ const S = {
     align-items:start;
   `,
   Icon: styled.img`
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  margin-right:9px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right:9px;
   `,
   Label: styled.div`
-  font-family: NotoSansCJKkr;
-  font-size: 14px;
-  color: #2f3e9e;
-  margin-bottom:8px;
+    font-family: NotoSansCJKkr;
+    font-size: 14px;
+    color: #2f3e9e;
+    margin-bottom:8px;
   `,
   Field: styled.div`
-  font-family: NotoSansCJKkr;
-  font-size: 17px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.54px;
-  color: #333333;
+    font-family: NotoSansCJKkr;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.54px;
+    color: #333333;
   `,
   SubField: styled.div`
-  opacity: 0.8;
-  font-family: NotoSansCJKkr;
-  font-size: 11px;
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.35px;
-  color: #333333;
-  margin-top:6px;
+    opacity: 0.8;
+    font-family: NotoSansCJKkr;
+    font-size: 11px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.35px;
+    color: #333333;
+    margin-top:6px;
   `,
 };
 
