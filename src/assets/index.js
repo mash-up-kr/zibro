@@ -9,4 +9,8 @@ export { default as timeIcon, ReactComponent as TimeIcon } from './icon-time.svg
 export { default as facebookIcon, ReactComponent as FacebookIcon } from './icon-facebook.svg';
 export { default as googleIcon, ReactComponent as GoogleIcon } from './icon-google.svg';
 export { default as taxiIcon, ReactComponent as TaxiIcon } from './icon-taxi.svg';
+export { default as activeIcon, ReactComponent as ActiveIcon } from './icon-active.svg';
+export { default as homeIcon, ReactComponent as HomeIcon } from './icon-home.svg';
+
+
 
