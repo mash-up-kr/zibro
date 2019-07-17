@@ -1,4 +1,3 @@
-import { hot } from 'react-hot-loader/root';
 import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import {
@@ -9,7 +8,7 @@ import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import { Layout, PrivateRoute, PublicRoute } from './components/base';
 import {
-  Home, Location, NotFound, Profile, Reservation, SignIn,
+  Home, Location, NotFound, Notifications, Profile, Reservation, SignIn, ReserveDetail
 } from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
@@ -26,18 +25,20 @@ const App = () => (
           <Router>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
-                <Route exact path={['/', '/location', '/profile']}>
+                <Route exact path={['/', '/location', '/notifications', '/profile', '/reserve', '/reservation-details']}>
                   <Layout>
                     <Switch>
-                      <PrivateRoute exact path="/" component={Home} />
-                      <PrivateRoute exact path="/location" component={Location} />
-                      <PrivateRoute exact path="/profile" component={Profile} />
+                      <Route exact path="/" component={Home} />
+                      <Route exact path="/location" component={Location} />
+                      <Route exact path="/notifications" component={Notifications} />
+                      <Route exact path="/profile" component={Profile} />
+                      <Route exact path="/reserve" component={Reservation} />
+                      <Route exact path="/reservation-details" component={ReserveDetail} />
                       <Redirect to="/not-found" />
                     </Switch>
                   </Layout>
                 </Route>
-                <PrivateRoute exact path="/reserve" component={Reservation} />
-                <PublicRoute exact path="/sign-in" component={SignIn} />
+                <Route exact path="/sign-in" component={SignIn} />
                 <Route exact path="/not-found" component={NotFound} />
                 <Redirect to="/not-found" />
               </Switch>
@@ -49,4 +50,4 @@ const App = () => (
   </Provider>
 );
 
-export default hot(App);
+export default App;

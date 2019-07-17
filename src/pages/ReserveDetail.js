@@ -1,30 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReserveButton, ReserveScript } from '../components';
 import { DateField, OriginField, DestinationField, AppBar } from '../components/common';
+import { RouteField, DetailRoute } from '../components/reservation-details';
 
 const S = {
   Wrapper: styled.div`
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
-  `,
+  `
 };
 
-const Reservation = () => {
+const ReserveDetail = () => {
   return (
     <S.Wrapper>
       <AppBar
-        title={'예약하기'}
+        title={'알람예약 상세보기'}
       />
-      <ReserveScript/>
-      <DateField/>
-      <OriginField/>
-      <DestinationField/>
-      <ReserveButton/>
+      <DateField />
+      <OriginField />
+      <DestinationField />
+      <RouteField />
+      <DetailRoute />
     </S.Wrapper>
   );
 };
 
-export default Reservation;
+export default ReserveDetail;
