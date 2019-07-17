@@ -14,21 +14,21 @@ const S = {
     align-items:start;
   `,
   Icon: styled.img`
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  margin-right:9px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right:9px;
   `,
   Label: styled.div`
-  font-family: NotoSansCJKkr;
-  font-size: 14px;
-  color: #2f3e9e;
-  margin-bottom:8px;
+    font-family: NotoSansCJKkr;
+    font-size: 14px;
+    color: #2f3e9e;
+    margin-bottom:8px;
   `,
   Field: styled.div`
-  font-family: NotoSansCJKkr;
-  font-size: 16px;
-  letter-spacing: 0.7px;
+    font-family: NotoSansCJKkr;
+    font-size: 16px;
+    letter-spacing: 0.7px;
   `,
 };
 
