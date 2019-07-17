@@ -7,7 +7,7 @@ export function* signInWithGoogle() {
     try {
       yield take(authActions.SIGN_IN_WITH_GOOGLE_REQUEST);
 
-      const authProvider = firebase.auth.googleAuthProvider();
+      const authProvider = new firebase.auth.GoogleAuthProvider();
 
       const result = yield call(firebase.auth.signInWithPopup, authProvider);
 
@@ -28,7 +28,7 @@ export function* signInWithFacebook() {
     try {
       yield take(authActions.SIGN_IN_WITH_FACEBOOK_REQUEST);
 
-      const authProvider = firebase.auth.facebookAuthProvider();
+      const authProvider = new firebase.auth.FacebookAuthProvider();
 
       const result = yield call(firebase.auth.signInWithPopup, authProvider);
 
