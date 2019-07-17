@@ -1,32 +1,29 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { Reserve } from '../components';
+import styled from 'styled-components';
+import { ReserveButton, ReserveScript } from '../components';
+import { DateField, OriginField, DestinationField, AppBar } from '../components/common';
 
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-  appbar: {
-    alignItems: 'center',
-  },
-});
-
+const S = {
+  Wrapper: styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+  `,
+};
 
 const Reservation = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <AppBar position="static" color="primary" className={classes.appbar}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            예약하기
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Reserve />
-    </div>
+    <S.Wrapper>
+      <AppBar
+        title={'예약하기'}
+      />
+      <ReserveScript/>
+      <DateField/>
+      <OriginField/>
+      <DestinationField/>
+      <ReserveButton/>
+    </S.Wrapper>
   );
 };
 

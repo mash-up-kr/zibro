@@ -1,4 +1,3 @@
-import { hot } from 'react-hot-loader/root';
 import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import {
@@ -52,4 +51,4 @@ const App = () => (
   </Provider>
 );
 
-export default hot(App);
+export default App;

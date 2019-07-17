@@ -1,46 +1,27 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { DateField, OriginField, DestinationField, RouteField, DetailRoute } from '../components/reservation-details';
-
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-  appbar: {
-    alignItems: 'center',
-  },
-});
+import { DateField, OriginField, DestinationField, AppBar } from '../components/common';
+import { RouteField, DetailRoute } from '../components/reservation-details';
 
 const S = {
   Wrapper: styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    padding: 20vh 0 12vh;
   `
 };
 
 const ReserveDetail = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <AppBar position="static" color="primary" className={classes.appbar}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            진행 중 예약
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <S.Wrapper>
+      <AppBar
+        title={'알람예약 상세보기'}
+      />
       <DateField />
       <OriginField />
       <DestinationField />
-      <RouteField/>
+      <RouteField />
       <DetailRoute />
-    </div>
+    </S.Wrapper>
   );
 };
 

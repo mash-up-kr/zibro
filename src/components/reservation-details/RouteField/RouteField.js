@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { a11y } from '../../../styles';
-import { ChangeButton } from '../ChangeButton'
+import { ChangeButton } from '../../common'
 import { placeIcon } from '../../../assets';
 
 const S = {

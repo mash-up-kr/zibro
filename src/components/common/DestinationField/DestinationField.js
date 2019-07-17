@@ -1,15 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { a11y } from '../../../styles';
-import { ChangeButton } from '../ChangeButton'
+import { default as ChangeButton } from '../ChangeButton';
 import { placeIcon } from '../../../assets';
 
 const S = {
   Wrapper: styled.div`
     padding-top:18px;
     padding-bottom:16px;
-    border-bottom:1px solid #d8d8d8;
+    border-bottom:1px solid #d7d9ec;
     width: 100%;
     padding-left:24px;
     display:flex;

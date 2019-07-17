@@ -12,7 +12,6 @@ const S = {
     color: #2f3e9e;
     position:absolute;
     right:40px;
-
   `,
 };
 

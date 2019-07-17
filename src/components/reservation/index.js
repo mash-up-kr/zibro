@@ -1,1 +1,2 @@
-export { default as Reserve } from './Reserve';
+export { default as ReserveScript } from './ReserveScript';
+export { default as ReserveButton } from './ReserveButton';
