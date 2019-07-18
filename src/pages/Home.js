@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NotificationsActive } from '@material-ui/icons';
+import { get } from 'lodash/fp';
 import { noTextHero } from '../assets';
+import { useAuth } from '../hooks';
 import { Notifications, Title } from '../components/home';
 
 const notifications = [
@@ -64,33 +66,36 @@ const S = {
   `,
 };
 
-const Home = () => (
-  <S.Wrapper>
-    <S.Header>
-      <Title />
-      <S.Paragraph>
-        <S.UserName>태차장</S.UserName>
-        님,
-        <br />
-        서울의 밤을 마음껏 즐기세요.
-        <br />
-        그리고 편안하게 집으로!
-      </S.Paragraph>
-    </S.Header>
-    <S.Main>
-      <S.Row>
-        <S.Notification>
-          <S.NotificationsActive />
-          <span>2</span>
-        </S.Notification>
-        <S.HelperText>
-          하단 예약 2개 중 1개를 눌러 상세 경로를 확인하세요.
-        </S.HelperText>
-      </S.Row>
-      <Notifications notifications={notifications} />
-    </S.Main>
-  </S.Wrapper>
+const Home = () => {
+  const { user } = useAuth();
 
-);
+  return (
+    <S.Wrapper>
+      <S.Header>
+        <Title />
+        <S.Paragraph>
+          <S.UserName>{get('displayName', user)}</S.UserName>
+          님,
+          <br />
+          서울의 밤을 마음껏 즐기세요.
+          <br />
+          그리고 편안하게 집으로!
+        </S.Paragraph>
+      </S.Header>
+      <S.Main>
+        <S.Row>
+          <S.Notification>
+            <S.NotificationsActive />
+            <span>2</span>
+          </S.Notification>
+          <S.HelperText>
+            하단 예약 2개 중 1개를 눌러 상세 경로를 확인하세요.
+          </S.HelperText>
+        </S.Row>
+        <Notifications notifications={notifications} />
+      </S.Main>
+    </S.Wrapper>
+  );
+};
 
 export default Home;
