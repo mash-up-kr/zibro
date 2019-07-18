@@ -6,7 +6,9 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { CssBaseline } from '@material-ui/core';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
-import { Layout } from './components';
+import { Layout, PrivateRoute, PublicRoute } from './components/base';
+import { Loader } from './components/common';
+
 import {
   Home, Location, NotFound, Profile, Reserve, SignIn, ReservationDetails
 } from './pages';
@@ -23,7 +25,7 @@ const App = () => (
           <GlobalStyle />
           <CssBaseline />
           <Router>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader />}>
               <Switch>
                 <Route exact path={['/', '/location', '/profile', '/reserve', '/reservation-details']}>
                   <Layout>

@@ -1,7 +1,7 @@
 const { pickBy } = require('lodash/fp');
 
 const alias = {
-  'react-dom': process.env.NODE_ENV === 'development' && '@hot-loader/react-dom',
+  // 'react-dom': process.env.NODE_ENV === 'development' && '@hot-loader/react-dom',
 };
 
 module.exports = () => ({
