@@ -9,4 +9,6 @@ const auth = {
   onAuthStateChanged: (...args) => firebase.auth().onAuthStateChanged(...args),
 };
 
-export { auth };
+const firestore = {};
+
+export { auth, firestore };
