@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'lodash-fp'],
   rules: {
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['draft'] }],
     'no-underscore-dangle': ['error', { allow: ['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] }],
     'no-useless-escape': ['off', 'always'],
     'import/no-extraneous-dependencies': ['error', { 'devDependencies': ['**/*.stories.js', '**/*.test.js'] }],

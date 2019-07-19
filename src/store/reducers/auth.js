@@ -1,42 +1,34 @@
+import produce from 'immer';
 import { auth } from '../actions';
 
 const initialState = {
   user: { data: null, loading: false, error: null },
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => produce(state, (draft) => {
   switch (action) {
     case auth.SIGN_IN_WITH_GOOGLE_REQUEST:
-      return {
-        ...state,
-        user: { ...state.user, loading: true },
-      };
+      draft.user.loading = true;
+      break;
     case auth.SIGN_IN_WITH_GOOGLE_SUCCESS:
-      return {
-        ...state,
-      };
+      draft.user.loading = false;
+      break;
     case auth.SIGN_IN_WITH_GOOGLE_FAILURE:
-      return {
-        ...state,
-        user: { ...state.user, loading: false, error: action.payload.error },
-      };
+      draft.user.loading = false;
+      draft.user.error = action.payload.error;
+      break;
     case auth.SIGN_IN_WITH_FACEBOOK_REQUEST:
-      return {
-        ...state,
-        user: { ...state.user, loading: true },
-      };
+      draft.user.loading = true;
+      break;
     case auth.SIGN_IN_WITH_FACEBOOK_SUCCESS:
-      return {
-        ...state,
-      };
+      draft.user.loading = false;
+      break;
     case auth.SIGN_IN_WITH_FACEBOOK_FAILURE:
-      return {
-        ...state,
-        user: { ...state.user, loading: false, error: action.payload.error },
-      };
+      draft.user.loading = false;
+      draft.user.error = action.payload.error;
+      break;
     default:
-      return state;
   }
-};
+});
 
 export default reducer;
