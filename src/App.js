@@ -10,7 +10,7 @@ import { Layout, PrivateRoute, PublicRoute } from './components/base';
 import { Loader } from './components/common';
 
 import {
-  Home, Location, NotFound, Profile, Reserve, SignIn, ReservationDetails
+  Home, Location, NotFound, Profile, Reserve, SignIn, ReservationDetails,
 } from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
@@ -30,17 +30,16 @@ const App = () => (
                 <Route exact path={['/', '/location', '/profile', '/reserve', '/reservation-details']}>
                   <Layout>
                     <Switch>
-                      <Route exact path="/" component={Home} />
-                      <Route exact path="/location" component={Location} />
-                      <Route exact path="/profile" component={Profile} />
-                      <Route exact path="/reserve" component={Reserve} />
-                      <Route exact path="/reservation-details" component={ReservationDetails} />
+                      <PrivateRoute exact path="/" component={Home} />
+                      <PrivateRoute exact path="/location" component={Location} />
+                      <PrivateRoute exact path="/profile" component={Profile} />
+                      <PrivateRoute exact path="/reserve" component={Reserve} />
+                      <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
                       <Redirect to="/not-found" />
                     </Switch>
                   </Layout>
                 </Route>
-
-                <Route exact path="/sign-in" component={SignIn} />
+                <PublicRoute exact path="/sign-in" component={SignIn} />
                 <Route exact path="/not-found" component={NotFound} />
                 <Redirect to="/not-found" />
               </Switch>
