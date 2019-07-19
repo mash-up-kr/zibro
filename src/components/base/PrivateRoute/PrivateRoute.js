@@ -15,11 +15,9 @@ const PrivateRoute = ({ component: Component, ...otherProps }) => {
           return <Loader />;
         }
 
-        return (
-          user
-            ? <Component {...props} />
-            : <Redirect to="/sign-in" />
-        );
+        return user
+          ? <Component {...props} />
+          : <Redirect to="/sign-in" />;
       }}
     />
   );
