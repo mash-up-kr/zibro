@@ -9,6 +9,6 @@ module.exports = () => ({
     alias: pickBy(Boolean, alias),
   },
   babel: {
-    plugins: ['react-hot-loader/babel'],
+    plugins: [],
   },
 });
