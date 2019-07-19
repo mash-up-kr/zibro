@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { NotificationsActive } from '@material-ui/icons';
 import { get } from 'lodash/fp';
 import { noTextHero } from '../assets';
-import { useAuth } from '../hooks';
+import { firebase } from '../utils';
 import { Notifications, Title } from '../components/home';
 
 const notifications = [
@@ -17,7 +17,9 @@ const S = {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
     height: 100%;
+    max-height: 100%;
     padding: 8vh 0 0;
     background-color: ${({ theme }) => theme.palette.primary.light};
   `,
@@ -67,7 +69,7 @@ const S = {
 };
 
 const Home = () => {
-  const { user } = useAuth();
+  const user = useMemo(() => firebase.auth.getCurrentUser(), []);
 
   return (
     <S.Wrapper>
