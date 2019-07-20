@@ -20,6 +20,23 @@ const firestore = {
 
     return snapshot;
   },
+  addDocument: async (collectionRef, data) => {
+    const collection = typeof pathOrRef === 'string'
+      ? firebase.firestore().collection(collectionRef)
+      : collectionRef;
+    const snapshot = await collection.add(data);
+
+    return snapshot;
+  },
+  setDocument: async (documentRef, data, config) => {
+    const document = typeof documentRef === 'string'
+      ? firebase.firestore().doc(documentRef)
+      : documentRef;
+
+    const snapshot = document.set(data, config);
+
+    return snapshot;
+  },
   runTransaction: updateFunction => firebase.firestore().runTransaction(updateFunction),
 };
 
