@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import styled from 'styled-components';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import { AccountCircle, DirectionsBus, InsertInvitation } from '@material-ui/icons';
 import { findIndex } from 'lodash/fp';
@@ -11,7 +12,12 @@ const pathnames = [
   '/profile',
 ];
 
-// TODO: BottomNavigation으로 교체 요망
+const S = {
+  BottomNavigation: styled(BottomNavigation)`
+    border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
+  `,
+};
+
 const Navigation = ({ location }) => {
   const [value, setValue] = useState(() => findIndex(
     pathname => pathname === location.pathname,
@@ -21,7 +27,7 @@ const Navigation = ({ location }) => {
   const handleChange = useCallback((event, newValue) => setValue(newValue), []);
 
   return (
-    <BottomNavigation
+    <S.BottomNavigation
       value={value}
       onChange={handleChange}
       showLabels
@@ -44,7 +50,7 @@ const Navigation = ({ location }) => {
         label="프로필 설정"
         icon={<AccountCircle />}
       />
-    </BottomNavigation>
+    </S.BottomNavigation>
   );
 };
 

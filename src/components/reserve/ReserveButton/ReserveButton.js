@@ -15,7 +15,6 @@ const S = {
     border-radius:0;
   `,
 };
-// TODO: 디스패치 달기
 const ReserveButton = () => (
   <S.Button variant="contained">
     <Link to="/">막차 알림 예약하기</Link>
