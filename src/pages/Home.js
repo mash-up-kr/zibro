@@ -94,11 +94,9 @@ const Home = () => {
         <Title />
         <S.Paragraph>
           <S.UserName>{get('displayName', user)}</S.UserName>
-          님,
+          님, 7월 교통비로
           <br />
-          서울의 밤을 마음껏 즐기세요.
-          <br />
-          그리고 편안하게 집으로!
+          총 10,000원 절약하셨네요!
         </S.Paragraph>
       </S.Header>
       <S.Main>

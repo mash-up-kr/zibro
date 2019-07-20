@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { taxiIcon, busIcon, walkIcon } from '../../../assets';
+import { busIcon, walkIcon } from '../../../assets';
 
 const S = {
   Wrapper: styled.div`
@@ -19,6 +19,7 @@ const S = {
     object-fit: contain;
     margin-right:9px;
     z-index:100;
+    border-radius:100px;
   `,
   Row: styled.div`
     display:flex;
@@ -41,7 +42,6 @@ const S = {
     height: 16px;
     margin-right:4px;
     padding:2px 8px;
-    background-color: #e01540;
     color:#fff;
     font-size:11px;
     display:inline;
@@ -96,38 +96,84 @@ const S = {
     color:#000000;
   `,
 };
-
-const DetailRoute = ({ className, classes }) => (
+const icon = {
+  WALKING: walkIcon,
+  TRANSIT: busIcon,
+};
+const DetailRoute = ({
+  className, classes, duration, arrivalTime, departureTime, steps, expectedCost,
+}) => (
   <S.Wrapper className={className}>
-    <S.Cost classNmae={classes.cost}> 예상 비용: 11,350 원</S.Cost>
-    <S.Field className={classes.field}> 1 시간 40 분 </S.Field>
-    <S.SubField> 오후 11: 45~오전 1: 30 </S.SubField>
+    <S.Cost className={classes.cost}>
+      예상 비용:
+      { expectedCost }
+    </S.Cost>
+    <S.Field>
+      { duration }
+    </S.Field>
+    <S.SubField>
+      { departureTime }
+      ~
+      { arrivalTime }
+    </S.SubField>
     <S.SubWrapper>
       <S.Line />
-      <S.Row>
-        <S.Icon src={taxiIcon} alt="taxi-icon" />
-        <S.Label>건대입구역 택시 탑승</S.Label>
-      </S.Row>
-      <S.Row>
-        <S.Icon src={busIcon} alt="taxi-icon" />
-        <S.Label>
-        강남역
-          <S.SubLabel>
-            <S.Tag>광역</S.Tag>
-              3013
-          </S.SubLabel>
-        </S.Label>
-      </S.Row>
-      <S.Row>
-        <S.Icon src={walkIcon} alt="taxi-icon" />
-        <S.Label>
-        상록중학교 하차
-        </S.Label>
-      </S.Row>
+      {steps.map(step => (
+        <>
+          { step.transitDetail != null ? (
+            <div key={step.step}>
+              <S.Row>
+                <S.Icon
+                  src={icon[step.travelMode]}
+                  alt="transit-icon"
+                  style={{ backgroundColor: step.transitDetail.transitColor }}
+                />
+                <S.Label>
+                  {step.transitDetail.departureStopName}
+                  <S.SubLabel>
+                    <S.Tag
+                      style={{ backgroundColor: step.transitDetail.transitColor }}
+                    >
+                      {step.transitDetail.transitNumber}
+                    </S.Tag>
+                    {step.transitDetail.headSign}
+                       행
+                  </S.SubLabel>
+                </S.Label>
+              </S.Row>
+              <S.Row>
+                <S.Icon
+                  src={icon[step.travelMode]}
+                  style={{ backgroundColor: step.transitDetail.transitColor }}
+                  alt="transit-icon"
+                />
+                <S.Label>
+                  {step.transitDetail.arrivalStopName}
+                  에서 하차
+                </S.Label>
+              </S.Row>
+            </div>
+          ) : (
+            <div key={step.step}>
+              <S.Row key={step.step}>
+                <S.Icon
+                  src={icon[step.travelMode]}
+                  alt="transit-icon"
+                  style={{ backgroundColor: '#a4a4a4' }}
+                />
+                <S.Label>
+                  도보
+                  {step.stepDuration}
+                </S.Label>
+              </S.Row>
+            </div>
+          )}
+        </>
+      ))}
       <S.Row>
         <S.Arrival />
         <S.Label>
-        집도착
+          집도착
         </S.Label>
       </S.Row>
     </S.SubWrapper>
@@ -138,8 +184,25 @@ DetailRoute.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.shape({
     cost: PropTypes.string,
-    field: PropTypes.string,
   }),
+  duration: PropTypes.string,
+  arrivalTime: PropTypes.string,
+  departureTime: PropTypes.string,
+  expectedCost: PropTypes.string,
+  steps: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.number,
+    travelMode: PropTypes.string,
+    instructions: PropTypes.string,
+    transitDetail: PropTypes.shape({
+      arrivalStopName: PropTypes.string,
+      departureStopName: PropTypes.string,
+      transitColor: PropTypes.string,
+      headSign: PropTypes.string,
+      transitType: PropTypes.string,
+      transitNumber: PropTypes.string,
+      numStops: PropTypes.number,
+    }),
+  })),
 };
 
 DetailRoute.defaultProps = {
@@ -148,6 +211,11 @@ DetailRoute.defaultProps = {
     cost: 'cost',
     field: 'field',
   },
+  duration: '',
+  arrivalTime: '',
+  departureTime: '',
+  steps: undefined,
+  expectedCost: '',
 };
 
 export default DetailRoute;
