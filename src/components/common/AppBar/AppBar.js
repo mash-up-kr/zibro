@@ -6,18 +6,22 @@ import { AppBar as MuiAppBar, Toolbar, Typography } from '@material-ui/core';
 import BackButton from '../BackButton';
 
 const S = {
-  Wrapper: styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
-  `,
   AppBar: styled(MuiAppBar)`
-    box-shadow:none;
-    background-color:#3e50b4;
+    box-shadow: none;
+  `,
+  Toolbar: styled(Toolbar)`
+    position: relative;
+    display: flex;
+    justify-content: center;
+  `,
+  BackButton: styled(BackButton)`
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
   `,
   Title: styled(Typography)`
-    margin-left:40px;
+    text-align: center;
   `,
 };
 
@@ -25,13 +29,13 @@ const AppBar = ({ history, children }) => {
   const handleClick = useCallback(() => history.goBack(), [history]);
 
   return (
-    <S.AppBar position="static" color="primary">
-      <Toolbar>
-        <BackButton onClick={handleClick} />
-        <S.Title variant="h6" color="inherit">
+    <S.AppBar color="primary">
+      <S.Toolbar>
+        <S.BackButton onClick={handleClick} />
+        <S.Title variant="h2" color="inherit">
           {children}
         </S.Title>
-      </Toolbar>
+      </S.Toolbar>
     </S.AppBar>
   );
 };

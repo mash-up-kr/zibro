@@ -41,8 +41,6 @@ const App = () => (
                           <PrivateRoute exact path="/profile" component={Profile} />
                           <PrivateRoute exact path="/reservation" component={Reservation} />
                           <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
-                          <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
-                          <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
                           <PrivateRoute exact path="/recommended-routes" component={RecommendedRoutes} />
                           <PrivateRoute exact path="/recommended-routes/:rid" component={RecommendedRouteDetail} />
                           <Redirect to="/not-found" />

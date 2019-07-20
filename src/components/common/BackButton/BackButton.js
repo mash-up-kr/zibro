@@ -13,7 +13,7 @@ const BackButton = ({ className, type, onClick }) => (
   <S.IconButton
     className={className}
     type={type}
-    size="small"
+    size="medium"
     onClick={onClick}
   >
     <ArrowBack />
