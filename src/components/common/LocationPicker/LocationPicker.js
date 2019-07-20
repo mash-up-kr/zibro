@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { IconButton, TextField } from '@material-ui/core';
@@ -75,10 +75,19 @@ const S = {
 const LocationPicker = ({ className, field, onClose }) => {
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(false);
+  const [position, setPosition] = useState(null);
 
   const handleChange = useCallback(event => setValue(event.target.value), []);
   const handleFocus = useCallback(() => setFocused(true), []);
   const handleBlur = useCallback(() => setFocused(false), []);
+  const handleGoogleApiLoaded = useCallback(({ map, maps }) => console.log(map), []);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(currentPosition => setPosition({
+      lat: currentPosition.coords.latitude,
+      lng: currentPosition.coords.longitude,
+    }));
+  }, []);
 
   return (
     <S.MapWrapper className={className}>
@@ -101,7 +110,7 @@ const LocationPicker = ({ className, field, onClose }) => {
         <S.BackButton type="button" size="small" onClick={onClose} />
         {focused && <S.SearchList />}
       </S.SearchBar>
-      <S.Map />
+      <S.Map center={position} onGoogleApiLoaded={handleGoogleApiLoaded} />
     </S.MapWrapper>
   );
 };

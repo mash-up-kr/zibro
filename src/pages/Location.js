@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { BackButton, Map, SearchField } from '../components/common';
 
@@ -23,9 +23,17 @@ const S = {
 
 const Location = () => {
   const [value, setValue] = useState('');
+  const [position, setPosition] = useState(null);
 
   const handleChange = useCallback(event => setValue(event.target.value), []);
   const handleClear = useCallback(() => setValue(''), []);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(currentPosition => setPosition({
+      lat: currentPosition.coords.latitude,
+      lng: currentPosition.coords.longitude,
+    }));
+  }, []);
 
   return (
     <S.Wrapper>
@@ -34,7 +42,7 @@ const Location = () => {
           <SearchField value={value} onChange={handleChange} onClear={handleClear} />
           <SearchField value={value} onChange={handleChange} onClear={handleClear} />
         </S.FieldGroup>
-        <Map />
+        <Map center={position} />
       </S.Main>
     </S.Wrapper>
   );
