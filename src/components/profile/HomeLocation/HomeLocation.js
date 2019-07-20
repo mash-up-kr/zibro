@@ -35,11 +35,11 @@ const S = {
 const HomeLocation = () => (
   <S.Wrapper>
     <S.Icon src={homeIcon} alt="home-icon" />
-    <div className={'HomeLocation'}>
+    <div className="HomeLocation">
       <S.Label>집 위치</S.Label>
       <S.Field>서울시 강동구 송파동 234</S.Field>
     </div>
-    <ChangeButton/>
+    <ChangeButton />
   </S.Wrapper>
 );
 

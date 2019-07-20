@@ -12,7 +12,7 @@ export default createMuiTheme({
     },
     secondary: {
       light: '',
-      main: '#FFF',
+      main: '#ffdb00',
       contrastText: '#FFF',
     },
     error: {

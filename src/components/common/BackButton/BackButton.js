@@ -7,8 +7,8 @@ import { ArrowBack } from '@material-ui/icons';
 const S = {
   IconButton: styled(MuiIconButton)`
     color:#d7d9ec;
-  `
-}
+  `,
+};
 const BackButton = ({ className, type, onClick }) => (
   <S.IconButton
     className={className}

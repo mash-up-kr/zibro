@@ -6,6 +6,4 @@ export { default as OriginField } from './OriginField';
 export { default as DestinationField } from './DestinationField';
 export { default as ChangeButton } from './ChangeButton';
 export { default as AppBar } from './AppBar';
-
-
-
+export { default as DatePicker } from './DatePicker';

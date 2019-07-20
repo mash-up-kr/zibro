@@ -11,6 +11,3 @@ export { default as googleIcon, ReactComponent as GoogleIcon } from './icon-goog
 export { default as taxiIcon, ReactComponent as TaxiIcon } from './icon-taxi.svg';
 export { default as activeIcon, ReactComponent as ActiveIcon } from './icon-active.svg';
 export { default as homeIcon, ReactComponent as HomeIcon } from './icon-home.svg';
-
-
-

@@ -15,12 +15,10 @@ const S = {
   `,
 };
 
-const ChangeButton = () => {
-  return (
-    <S.Button>
-      변경
-    </S.Button>
-  );
-};
+const ChangeButton = () => (
+  <S.Button>
+    변경
+  </S.Button>
+);
 
 export default ChangeButton;

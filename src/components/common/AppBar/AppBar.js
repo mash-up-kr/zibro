@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { AppBar as MuiAppBar, Toolbar, Typography } from '@material-ui/core';
 import BackButton from '../BackButton';
@@ -10,26 +12,35 @@ const S = {
     flex-grow: 1;
     height: 100%;
   `,
-  AppBar:styled(MuiAppBar)`
+  AppBar: styled(MuiAppBar)`
     box-shadow:none;
     background-color:#3e50b4;
   `,
-  Title:styled(Typography)`
+  Title: styled(Typography)`
     margin-left:40px;
-  `
+  `,
 };
 
-const Reservation = ({title}) => {
+const AppBar = ({ history, title }) => {
+  const handleClick = useCallback(() => history.goBack(), [history]);
+
   return (
-      <S.AppBar position="static" color="primary">
-        <Toolbar>
-          <BackButton/>
-          <S.Title variant="h6" color="inherit">
-            {title}
-          </S.Title>
-        </Toolbar>
-      </S.AppBar>
+    <S.AppBar position="static" color="primary">
+      <Toolbar>
+        <BackButton onClick={handleClick} />
+        <S.Title variant="h6" color="inherit">
+          {title}
+        </S.Title>
+      </Toolbar>
+    </S.AppBar>
   );
 };
 
-export default Reservation;
+AppBar.propTypes = {
+  history: PropTypes.shape({
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
+  title: PropTypes.elementType.isRequired,
+};
+
+export default withRouter(AppBar);

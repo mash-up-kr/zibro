@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { default as ChangeButton } from '../ChangeButton';
+import ChangeButton from '../ChangeButton';
+import DatePicker from '../DatePicker';
 import { eventIcon } from '../../../assets';
 
 const S = {
@@ -35,11 +36,12 @@ const S = {
 const ChangeDate = () => (
   <S.Wrapper>
     <S.Icon src={eventIcon} alt="event-icon" />
-    <div className={'changeDate'}>
+    <div className="changeDate">
       <S.Label>예약 날짜</S.Label>
-      <S.Field>2019년 05월 03일</S.Field>
+      {/* <S.Field>2019년 05월 03일</S.Field> */}
+      <DatePicker />
     </div>
-    <ChangeButton/>
+    <ChangeButton />
   </S.Wrapper>
 );
 

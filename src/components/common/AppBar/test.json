@@ -1,0 +1,516 @@
+{
+"geocoded_waypoints": [
+{
+"geocoder_status": "OK",
+"place_id": "ChIJd_4fBAmwfDURavuX_auhIUU",
+"types": [
+"street_address"
+]
+},
+{
+"geocoder_status": "OK",
+"place_id": "ChIJAT-e6SpvezURcKLLElS9b3k",
+"types": [
+"street_address"
+]
+}
+],
+"routes": [
+{
+"bounds": {
+"northeast": {
+"lat": 37.550948,
+"lng": 127.128971
+},
+"southwest": {
+"lat": 37.302452,
+"lng": 126.866395
+}
+},
+"copyrights": "지도 데이터 ©2019 SK telecom",
+"legs": [
+{
+"arrival_time": {
+"text": "오후 10:53",
+"time_zone": "Asia/Seoul",
+"value": 1563544428
+},
+"departure_time": {
+"text": "오후 9:19",
+"time_zone": "Asia/Seoul",
+"value": 1563538764
+},
+"distance": {
+"text": "44.7 km",
+"value": 44730
+},
+"duration": {
+"text": "1시간 34분",
+"value": 5664
+},
+"end_address": "대한민국 경기도 안산시 상록구 일동 524-30",
+"end_location": {
+"lat": 37.303092,
+"lng": 126.866533
+},
+"start_address": "대한민국 서울특별시 강동구 암사1동 501-16",
+"start_location": {
+"lat": 37.550948,
+"lng": 127.128971
+},
+"steps": [
+{
+"distance": {
+"text": "0.2 km",
+"value": 154
+},
+"duration": {
+"text": "3분",
+"value": 156
+},
+"end_location": {
+"lat": 37.550155,
+"lng": 127.127536
+},
+"html_instructions": "암사까지 도보",
+"polyline": {
+"points": "mdedFa{|fWxBpFd@j@"
+},
+"start_location": {
+"lat": 37.550948,
+"lng": 127.128971
+},
+"steps": [
+{
+"distance": {
+"text": "0.1 km",
+"value": 126
+},
+"duration": {
+"text": "2분",
+"value": 127
+},
+"end_location": {
+"lat": 37.550339,
+"lng": 127.127763
+},
+"polyline": {
+"points": "mdedFa{|fWxBpF"
+},
+"start_location": {
+"lat": 37.550948,
+"lng": 127.128971
+},
+"travel_mode": "WALKING"
+},
+{
+"distance": {
+"text": "28 m",
+"value": 28
+},
+"duration": {
+"text": "1분",
+"value": 29
+},
+"end_location": {
+"lat": 37.550155,
+"lng": 127.127536
+},
+"html_instructions": "<span class=\"location\">1</span> 입구 이용",
+"polyline": {
+"points": "s`edFos|fWd@j@"
+},
+"start_location": {
+"lat": 37.550339,
+"lng": 127.127763
+},
+"travel_mode": "WALKING"
+}
+],
+"travel_mode": "WALKING"
+},
+{
+"distance": {
+"text": "4.7 km",
+"value": 4680
+},
+"duration": {
+"text": "8분",
+"value": 480
+},
+"end_location": {
+"lat": 37.514723,
+"lng": 127.104356
+},
+"html_instructions": "지하철 모란역행",
+"polyline": {
+"points": "m_edFcr|fWfCh@fCp@fGzA`B`@vLzC`GzArKnClFxAfDz@|Cz@@AfLpCpItBdIrBbM~ClBt@l@H`Bn@rQhJdEbCfCrBnBvA|CjBvB|@hFrBbFtA~Cx@lH|EhAt@jAz@HTZR\\t@v@tCdCpKp@rC`CdK|CbO"
+},
+"start_location": {
+"lat": 37.550155,
+"lng": 127.127536
+},
+"transit_details": {
+"arrival_stop": {
+"location": {
+"lat": 37.514723,
+"lng": 127.104356
+},
+"name": "잠실"
+},
+"arrival_time": {
+"text": "오후 9:30",
+"time_zone": "Asia/Seoul",
+"value": 1563539400
+},
+"departure_stop": {
+"location": {
+"lat": 37.550155,
+"lng": 127.127536
+},
+"name": "암사"
+},
+"departure_time": {
+"text": "오후 9:22",
+"time_zone": "Asia/Seoul",
+"value": 1563538920
+},
+"headsign": "모란역",
+"line": {
+"agencies": [
+{
+"name": "서울도시철도공사",
+"url": "http://www.odsay.com/Subway/LineInfo.asp?CID=1000&LMenu=2/"
+}
+],
+"color": "#ec1286",
+"name": "서울지하철",
+"short_name": "8호선",
+"text_color": "#ffffff",
+"vehicle": {
+"icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+"name": "지하철",
+"type": "SUBWAY"
+}
+},
+"num_stops": 4
+},
+"travel_mode": "TRANSIT"
+},
+{
+"distance": {
+"text": "0.4 km",
+"value": 399
+},
+"duration": {
+"text": "3분",
+"value": 180
+},
+"end_location": {
+"lat": 37.51335,
+"lng": 127.100171
+},
+"html_instructions": "잠실까지 도보",
+"polyline": {
+"points": "_b~cFgaxfWpGdY"
+},
+"start_location": {
+"lat": 37.514723,
+"lng": 127.104356
+},
+"steps": [
+{
+"distance": {
+"text": "0.4 km",
+"value": 399
+},
+"duration": {
+"text": "3분",
+"value": 180
+},
+"end_location": {
+"lat": 37.51335,
+"lng": 127.100171
+},
+"polyline": {
+"points": "_b~cFgaxfWpGdY"
+},
+"start_location": {
+"lat": 37.514723,
+"lng": 127.104356
+},
+"travel_mode": "WALKING"
+}
+],
+"travel_mode": "WALKING"
+},
+{
+"distance": {
+"text": "11.8 km",
+"value": 11798
+},
+"duration": {
+"text": "22분",
+"value": 1320
+},
+"end_location": {
+"lat": 37.476568,
+"lng": 126.981649
+},
+"html_instructions": "지하철 성수역행",
+"polyline": {
+"points": "my}cFagwfW~@lEdAtFXhBl@|Eb@zGd@xJp@|MFvAH|BJlFAvEMdIO|JOlLGxD@zB?nBFbBF~ALbDNbBh@pFj@bHRdCn@xGx@zJv@dKd@pFFr@PlATfA`@tB~CrOpA`GXbBnCzMzEbU~C~NpBnJ~BlK`ArFrB~JlBdJ|AtH~@jEzAlH`BzHzAxG?@dCbM|BxKjAtF`ClLjBbIfCnMpCzMbBbIpEhTbCzLdAlE?@hAfG~C~N~DdRfA~Fl@|CHTRTl@f@`@Zv@`@`A^h@J~@NhAJdD\\xDZpFf@nE`@bAJfCVhAVl@VhAr@p@n@^d@`@p@Xl@Tl@Pl@Lj@jAbHP|BN~DNjCLh@PvApApFpBrInBnI~@xDt@fDz@zCHZZ|@pAfDxAnDvAlDj@nAp@dB`@dAp@jCh@|CHn@@f@Ab@e@vHCxA"
+},
+"start_location": {
+"lat": 37.51335,
+"lng": 127.100171
+},
+"transit_details": {
+"arrival_stop": {
+"location": {
+"lat": 37.476568,
+"lng": 126.981649
+},
+"name": "사당역"
+},
+"arrival_time": {
+"text": "오후 10:05",
+"time_zone": "Asia/Seoul",
+"value": 1563541500
+},
+"departure_stop": {
+"location": {
+"lat": 37.51335,
+"lng": 127.100171
+},
+"name": "잠실"
+},
+"departure_time": {
+"text": "오후 9:43",
+"time_zone": "Asia/Seoul",
+"value": 1563540180
+},
+"headsign": "성수역",
+"line": {
+"agencies": [
+{
+"name": "서울메트로",
+"url": "http://www.seoulmetro.co.kr/"
+}
+],
+"color": "#0f993d",
+"name": "서울지하철",
+"short_name": "2호선",
+"text_color": "#ffffff",
+"vehicle": {
+"icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+"name": "지하철",
+"type": "SUBWAY"
+}
+},
+"num_stops": 10
+},
+"travel_mode": "TRANSIT"
+},
+{
+"distance": {
+"text": "48 m",
+"value": 48
+},
+"duration": {
+"text": "1분",
+"value": 75
+},
+"end_location": {
+"lat": 37.477,
+"lng": 126.981681
+},
+"html_instructions": "사당역까지 도보",
+"polyline": {
+"points": "qsvcFib`fWuAE"
+},
+"start_location": {
+"lat": 37.476568,
+"lng": 126.981649
+},
+"steps": [
+{
+"distance": {
+"text": "48 m",
+"value": 48
+},
+"duration": {
+"text": "1분",
+"value": 75
+},
+"end_location": {
+"lat": 37.477,
+"lng": 126.981681
+},
+"polyline": {
+"points": "qsvcFib`fWuAE"
+},
+"start_location": {
+"lat": 37.476568,
+"lng": 126.981649
+},
+"travel_mode": "WALKING"
+}
+],
+"travel_mode": "WALKING"
+},
+{
+"distance": {
+"text": "27.6 km",
+"value": 27605
+},
+"duration": {
+"text": "41분",
+"value": 2460
+},
+"end_location": {
+"lat": 37.302876,
+"lng": 126.866395
+},
+"html_instructions": "지하철 오이도역행",
+"polyline": {
+"points": "gvvcFob`fWjDBvBGpBStAUdBe@pA]nA]zGmCbAa@hBgAbAk@r@i@hA{@v@u@|@kAxCeEhBqB~@}@`Aw@nAaA`CuAhLkFnAu@h@WjCkB~AgAvB{AtGsEbH{EjA{@jB{AnBuB|BiCbIaJ~CyEjFsKxAuDp@}BRa@d@g@tA_A@A`BsAzM{IrDcClLcIxCqBdAy@nAs@b@Un@M@?ZK`GSrEU|Lg@bACn@?`@HZHdAh@pC`BvH~E@?v@b@bFtCbAfAf@v@j@jA`@tAXpBHrBCrH@rG?fA?pCGpA[`DAbAPzBPdAXbA^n@dBbBpGrFdGhF~JjKhDlDtAlA~BvBbCbCbAlAnBpBxAzArKlLfBtBhBjB~BvBpAjAzBxA|BfAjAj@r@TvRrGhBl@pAVbCZrFx@dFt@tBZrBZhEr@xQnCfCZb@LjA`@jC~@dBj@l@ZfANdAAr@CdHOh@N`FxCn@t@b@b@\\j@hBzDVfApAzE`AtDbA~DnDfOrGzXd@`BhAlElA|EbC`K`GrVhH`ZdAzD?@rAvFbAhEZfAd@rAb@n@`EbGbLrOr@lA`BlChApCTj@l@tAb@`At@lAzAjBnAbArAt@~Bx@nATfALzBDfBS`AWl@]jDgEhBiBz@o@l@a@tFyCbFwBbKuDdC}@rDmA~FuBvBcApD{CpDeCf@WnAWf@GzCJ~@Rn@Pz@l@h@f@l@v@`BpDjEhKpC`GbHzOfF~L`I`R`AlB~EdLbC|EvDxHpAhB`B|Av@j@`Bt@pAd@tBn@lFhAfFdApK|BvNtCfEj@pB\\dD^~D\\dHf@nK`AxKvAtHbApAPjErAjB|@hDtBhCnBhDpCtC|B|AvAz@n@fFfElEbDRPbDjCbDnCtH`GbInGpIvGfHxFjG`FzHfGtErDzBfBjEfDdG`F?@xH|FvDnCdEtDpB`Cv@rAj@nA`BvDdAbDf@pB`CbNvAhInD|RdBdKjBnLdA|E`AhGXrCJdGPjHJtHR`QNjMErGq@xT]fI"
+},
+"start_location": {
+"lat": 37.477,
+"lng": 126.981681
+},
+"transit_details": {
+"arrival_stop": {
+"location": {
+"lat": 37.302876,
+"lng": 126.866395
+},
+"name": "상록수"
+},
+"arrival_time": {
+"text": "오후 10:53",
+"time_zone": "Asia/Seoul",
+"value": 1563544380
+},
+"departure_stop": {
+"location": {
+"lat": 37.477,
+"lng": 126.981681
+},
+"name": "사당역"
+},
+"departure_time": {
+"text": "오후 10:12",
+"time_zone": "Asia/Seoul",
+"value": 1563541920
+},
+"headsign": "오이도역",
+"line": {
+"agencies": [
+{
+"name": "서울메트로",
+"url": "http://www.seoulmetro.co.kr/"
+}
+],
+"color": "#1d8ac7",
+"name": "서울지하철",
+"short_name": "4호선",
+"text_color": "#ffffff",
+"vehicle": {
+"icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+"name": "지하철",
+"type": "SUBWAY"
+}
+},
+"num_stops": 15
+},
+"travel_mode": "TRANSIT"
+},
+{
+"distance": {
+"text": "46 m",
+"value": 46
+},
+"duration": {
+"text": "1분",
+"value": 48
+},
+"end_location": {
+"lat": 37.303092,
+"lng": 126.866533
+},
+"html_instructions": "대한민국 경기도 안산시 상록구 일동 524-30까지 도보",
+"polyline": {
+"points": "_vtbF_rieWWy@Q^"
+},
+"start_location": {
+"lat": 37.302876,
+"lng": 126.866395
+},
+"steps": [
+{
+"distance": {
+"text": "29 m",
+"value": 29
+},
+"duration": {
+"text": "1분",
+"value": 30
+},
+"end_location": {
+"lat": 37.302998,
+"lng": 126.866692
+},
+"html_instructions": "<span class=\"location\">2</span> 출구 이용",
+"polyline": {
+"points": "_vtbF_rieWWy@"
+},
+"start_location": {
+"lat": 37.302876,
+"lng": 126.866395
+},
+"travel_mode": "WALKING"
+},
+{
+"distance": {
+"text": "17 m",
+"value": 17
+},
+"duration": {
+"text": "1분",
+"value": 18
+},
+"end_location": {
+"lat": 37.303092,
+"lng": 126.866533
+},
+"polyline": {
+"points": "wvtbFysieWQ^"
+},
+"start_location": {
+"lat": 37.302998,
+"lng": 126.866692
+},
+"travel_mode": "WALKING"
+}
+],
+"travel_mode": "WALKING"
+}
+],
+"traffic_speed_entry": [],
+"via_waypoint": []
+}
+],
+"overview_polyline": {
+"points": "mdedFa{|fWxBpFd@j@fCh@h\\jItSjFtKtC~Cx@fLpCvShFbM~ClBt@l@H`Bn@rQhJdEbCfCrBnBvA|CjB`JpDbKnCvJrGjAz@HTZR\\t@v@tCvDdP`CdK|CbOpGdY~@lE~A~Il@|Eb@zGvAvYPtEJlFAvEMdI_@jXGxD@zB?nBFbBTbGx@tI~@hLn@xGx@zJ|AvRX`Cv@|DpFtWXbBnCzMzJbe@pF|V`ArF`FdVzIjb@zAzGbG|YlEbTjBbIfCnMpCzMtHl^bCzLdAlEhAhG~Idb@tB|KHTRTnAbAv@`@`A^hBZzSlBrGl@fCVhAVl@VhAr@p@n@^d@`@p@Xl@f@zALj@jAbHP|BN~DNjCLh@PvApApF`FbTtB`JdAvDlBdFnGrO`@dAp@jCr@lE?jAe@vHCxAuAEjDBvBGpBStAUvDcAnA]zGmCbAa@hBgAvBuAhA{@v@u@vEqGhBqB~@}@pCyB`CuAhLkFnAu@h@WjCkBvEcDxPoLvDwClF_GbIaJ~CyEjFsKxAuDp@}BRa@d@g@tA_AbBuAnS_NfQuLdAy@nAs@b@Un@M\\KtMi@`Ok@n@?`@HZHdAh@pC`BvH~Ex@b@bFtCbAfAf@v@j@jA`@tAXpBHrBCrH@zI?pCGpA[`DAbAPzBPdAXbA^n@dBbBvO|MhPxPtAlAbGzFbAlAnBpBlNhOfBtBhBjBpEbEzBxA|BfAjAj@r@T`V`IpAVbCZxMnBhFv@bXbEfCZb@LvE`BdBj@l@ZfANdAAr@CdHOh@N`FxCn@t@b@b@\\j@hBzDVfArCpKrFfUrGzXd@`BvCjLdKtb@hH`ZdAzDrAxF~ApGd@rAb@n@`EbGbLrOtCzE~A|DpAvCt@lAzAjBnAbArAt@~Bx@nATfALzBDfBS`AWl@]jDgEhBiBz@o@l@a@tFyCbFwBbKuDdC}@rDmA~FuBvBcApD{CpDeCf@WvB_@zCJ~@Rn@Pz@l@h@f@l@v@lHzPtL|WhP``@`AlB~EdLbC|EvDxHpAhB`B|Av@j@`Bt@pAd@tBn@lFhAfFdAh[rGfEj@pB\\dD^~D\\dHf@nK`AnUzCpAPjErAjB|@hDtBhCnBhDpCtC|B|AvAbHvFlEbDvD|CbDnCtH`GtSfPrPzMxYjUdGbFxH|FvDnCdEtDpB`Cv@rAj@nA`BvDdAbDf@pB`CbNfGf]pEtXdA|E`AhGXrCJdGPjHJtHb@l_@ErGq@xT]fIWy@Q^"
+},
+"summary": "",
+"warnings": [
+"도보 경로는 베타 서비스입니다. 주의 – 이 경로에는 인도 또는 보행 경로가 누락되었을 수도 있습니다."
+],
+"waypoint_order": []
+}
+],
+"status": "OK"
+}
