@@ -27,22 +27,26 @@ const S = {
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+    padding-top: 56px;
   `,
-  Paragraph: styled.p`
-    padding: 24px;
-    border-bottom: 1px solid #d7d9ec;
-    width: 100%;
-    font-size: 16px;
-    letter-spacing: 0.7px;
-    color: #333333;
+  Main: styled.main`
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+  `,
+  Form: styled(Form)`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   `,
   Actions: styled.div`
+    margin-top: auto;
   `,
   Button: styled(Button)`
     width: 100%;
     margin-top: auto;
     padding: 18px 0;
-    background-color: #2F3E9E;
     color: #FFF;
     font-size: 14px;
     text-align: center;
@@ -62,34 +66,32 @@ const Reservation = () => {
   return (
     <S.Wrapper>
       <AppBar>예약하기</AppBar>
-      <S.Paragraph>
-        언제, 어디로 가는
-        <br />
-        막차 알림을 예약하시겠어요?
-      </S.Paragraph>
-      <Formik
-        initialValues={{
-          sendAt: Date.now(),
-          origin: {},
-          destination: {},
-        }}
-        validationSchema={Schema}
-        onSubmit={handleSubmit}
-      >
-        <Form>
-          <FastField name="sendAt" component={ReservationField} />
-          <FastField name="origin" component={OriginField} />
-          <FastField name="destination" component={DestinationField} />
-          <S.Actions>
-            <S.Button
-              type="submit"
-              variant="contained"
-            >
-              막차 알림 예약하기
-            </S.Button>
-          </S.Actions>
-        </Form>
-      </Formik>
+      <S.Main>
+        <Formik
+          initialValues={{
+            sendAt: Date.now(),
+            origin: {},
+            destination: {},
+          }}
+          validationSchema={Schema}
+          onSubmit={handleSubmit}
+        >
+          <S.Form>
+            <FastField name="sendAt" component={ReservationField} />
+            <FastField name="origin" component={OriginField} />
+            <FastField name="destination" component={DestinationField} />
+            <S.Actions>
+              <S.Button
+                type="submit"
+                color="primary"
+                variant="contained"
+              >
+                막차 알림 예약하기
+              </S.Button>
+            </S.Actions>
+          </S.Form>
+        </Formik>
+      </S.Main>
     </S.Wrapper>
   );
 };

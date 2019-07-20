@@ -6,8 +6,8 @@ export default createMuiTheme({
       default: 'transparent',
     },
     primary: {
-      light: '#D7D9EC',
-      main: '#330099',
+      light: '#3E50B4',
+      main: '#2F3E9E',
       contrastText: '#FFF',
     },
     secondary: {
@@ -65,6 +65,7 @@ export default createMuiTheme({
       },
     },
     fontFamily: [
+      'Noto Sans KR',
       '"Apple SD Gothic Neo"',
       '"Nanum Gothic"',
       '"나눔고딕"',
@@ -120,6 +121,9 @@ export default createMuiTheme({
       },
       contained: {
         boxShadow: 'none',
+        '&:active': {
+          boxShadow: 'none',
+        },
       },
     },
   },
