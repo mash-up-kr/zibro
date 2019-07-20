@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { BackButton, SearchField } from '../components/common';
-import { Map } from '../components/location';
+import { BackButton, Map, SearchField } from '../components/common';
 
 const S = {
   Wrapper: styled.div`

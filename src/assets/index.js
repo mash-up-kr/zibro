@@ -12,3 +12,4 @@ export { default as facebookIcon, ReactComponent as FacebookIcon } from './icon-
 export { default as googleIcon, ReactComponent as GoogleIcon } from './icon-google.svg';
 export { default as activeIcon, ReactComponent as ActiveIcon } from './icon-active.svg';
 export { default as homeIcon, ReactComponent as HomeIcon } from './icon-home.svg';
+export { default as busStop } from './busStop.json';

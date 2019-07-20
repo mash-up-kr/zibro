@@ -15,6 +15,7 @@ const pathnames = [
 const S = {
   BottomNavigation: styled(BottomNavigation)`
     border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
+    z-index: 1200;
   `,
 };
 
@@ -41,7 +42,7 @@ const Navigation = ({ location }) => {
       <BottomNavigationAction
         component={Link}
         to="/"
-        label="지금 집으로"
+        label="집으로"
 
         icon={<DirectionsBus />}
       />
