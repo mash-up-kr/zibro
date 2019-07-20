@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import ChangeButton from '../ChangeButton';
+import { Button } from '@material-ui/core';
 import DatePicker from '../DatePicker';
 import { eventIcon } from '../../../assets';
 
@@ -32,6 +32,7 @@ const S = {
     font-size: 16px;
     letter-spacing: 0.7px;
   `,
+  Button: styled(Button)``,
 };
 
 const ReservationField = ({ field, className }) => (
@@ -42,7 +43,13 @@ const ReservationField = ({ field, className }) => (
       {/* <S.Field>2019년 05월 03일</S.Field> */}
       <DatePicker {...field} />
     </div>
-    <ChangeButton />
+    <S.Button
+      type="button"
+      color="primary"
+      variant="outlined"
+    >
+        변경
+    </S.Button>
   </S.Wrapper>
 );
 

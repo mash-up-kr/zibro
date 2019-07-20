@@ -12,9 +12,9 @@ const S = {
 };
 
 const Map = ({
-  children, size, center, zoom,
+  className, children, size, center, zoom,
 }) => (
-  <S.Wrapper size={size}>
+  <S.Wrapper className={className} size={size}>
     <GoogleMapReact
       bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
       defaultCenter={center}
@@ -26,6 +26,7 @@ const Map = ({
 );
 
 Map.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
   size: PropTypes.shape({
     width: PropTypes.string.isRequired,
@@ -39,6 +40,7 @@ Map.propTypes = {
 };
 
 Map.defaultProps = {
+  className: undefined,
   children: undefined,
   size: { width: '100%', height: '100%' },
   center: { lat: 37.566791, lng: 126.978024 },

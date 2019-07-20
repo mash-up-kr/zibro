@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import ChangeButton from '../ChangeButton';
-import { placeIcon } from '../../../assets';
+import { Button } from '@material-ui/core';
+import { Place } from '@material-ui/icons';
+import LocationPicker from '../LocationPicker';
 
 const S = {
   Wrapper: styled.div`
@@ -31,25 +32,48 @@ const S = {
     font-size: 16px;
     letter-spacing: 0.7px;
   `,
+  Button: styled(Button)``,
+  Place: styled(Place)``,
 };
 
-const DestinationField = ({ className }) => (
-  <S.Wrapper className={className}>
-    <S.Icon src={placeIcon} alt="place-icon" />
-    <div className="changeRoute">
-      <S.Label>도착지</S.Label>
-      <S.Field>집</S.Field>
-    </div>
-    <ChangeButton />
-  </S.Wrapper>
-);
+const DestinationField = ({ className, field }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = useCallback(() => setOpen(true), []);
+  const handleClose = useCallback(() => setOpen(false), []);
+
+  return (
+    <S.Wrapper className={className}>
+      <S.Place />
+      <div className="changeRoute">
+        <S.Label>도착지</S.Label>
+        <S.Field>집</S.Field>
+      </div>
+      <S.Button
+        type="button"
+        color="primary"
+        variant="outlined"
+        onClick={handleOpen}
+      >
+        변경
+      </S.Button>
+      {open && <LocationPicker field={field} onClose={handleClose} />}
+    </S.Wrapper>
+  );
+};
 
 DestinationField.propTypes = {
   className: PropTypes.string,
+  field: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    value: PropTypes.shape({}).isRequired,
+    onChange: PropTypes.func.isRequired,
+  }),
 };
 
 DestinationField.defaultProps = {
   className: undefined,
+  field: {},
 };
 
 export default DestinationField;
