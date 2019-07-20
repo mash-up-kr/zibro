@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ChangeButton } from '../../common';
 import { activeIcon } from '../../../assets';
 
 const S = {
@@ -51,12 +50,12 @@ const AlertBefore = () => (
     <div className="AlertBefore">
       <S.Label>막차 출발 알림</S.Label>
       <S.ButtonField>
+        <S.Button>1시간 전</S.Button>
         <S.Button>30분 전</S.Button>
         <S.Button>20분 전</S.Button>
         <S.Button>10분 전</S.Button>
       </S.ButtonField>
     </div>
-    <ChangeButton />
   </S.Wrapper>
 );
 

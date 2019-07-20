@@ -66,25 +66,25 @@ const S = {
   `,
   Field: styled.div`
     font-family: NotoSansCJKkr;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
-    letter-spacing: 0.54px;
+    letter-spacing: 0.78px;
     color: #333333;
   `,
   SubField: styled.div`
     opacity: 0.8;
     font-family: NotoSansCJKkr;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
-    letter-spacing: 0.35px;
-    color: #333333;
-    margin-top:6px;
+    letter-spacing: 0.38px;
+    color: #000;
+    margin-top:4px;
   `,
   Cost: styled.div`
     position:absolute;
@@ -97,10 +97,10 @@ const S = {
   `,
 };
 
-const DetailRoute = ({ className }) => (
+const DetailRoute = ({ className, classes }) => (
   <S.Wrapper className={className}>
-    <S.Cost> 예상 비용: 11,350 원</S.Cost>
-    <S.Field> 1 시간 40 분 </S.Field>
+    <S.Cost classNmae={classes.cost}> 예상 비용: 11,350 원</S.Cost>
+    <S.Field className={classes.field}> 1 시간 40 분 </S.Field>
     <S.SubField> 오후 11: 45~오전 1: 30 </S.SubField>
     <S.SubWrapper>
       <S.Line />
@@ -136,10 +136,18 @@ const DetailRoute = ({ className }) => (
 
 DetailRoute.propTypes = {
   className: PropTypes.string,
+  classes: PropTypes.shape({
+    cost: PropTypes.string,
+    field: PropTypes.string,
+  }),
 };
 
 DetailRoute.defaultProps = {
   className: undefined,
+  classes: {
+    cost: 'cost',
+    field: 'field',
+  },
 };
 
 export default DetailRoute;
