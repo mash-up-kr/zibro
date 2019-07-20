@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import { daumtools } from '../utils';
 import { AppTitle, SignInWithFacebookButton, SignInWithGoogleButton } from '../components/sign-in';
 import { auth as authActions } from '../store/actions';
 
@@ -35,9 +36,26 @@ const SignIn = () => {
     dispatch(authActions.signInWithFacebookRequest());
   }, [dispatch]);
 
+  const handleClick = () => {
+    const encodedURI = encodeURIComponent('https://school.classting.net');
+
+    daumtools.web2app({
+      urlScheme: `classting://link?hide_navi=1&url=${encodedURI}`, // iphone : custom scheme
+      intentURI: '', // android : intent URI
+      appName: 'classting', // application Name (ex. facebook, twitter, daum)
+      storeURL: 'http://goo.gl/88kSr', // app store URL
+      willInvokeApp: () => {}, // function for logging
+      onAppMissing: () => {}, // fallback function (default. move to appstore)
+      onUnsupportedEnvironment: () => {}, // fallback function
+    });
+  };
+
   return (
     <S.Wrapper>
       <S.AppTitle />
+      <button type="button" onClick={handleClick}>
+        클릭
+      </button>
       <S.ButtonGroup>
         <SignInWithGoogleButton type="button" onClick={signInWithGoogle} />
         <SignInWithFacebookButton type="button" onClick={signInWithFacebook} />

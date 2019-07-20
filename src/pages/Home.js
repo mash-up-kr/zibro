@@ -86,8 +86,6 @@ const Home = () => {
     dispatch(notificationActions.fetchNotificationsRequest({ uid: user.uid }));
   }, [dispatch, user]);
 
-  console.log(notifications);
-
   return (
     <S.Wrapper>
       <S.Header>
