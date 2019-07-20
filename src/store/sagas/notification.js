@@ -3,7 +3,7 @@ import { map } from 'lodash/fp';
 import { notification as notificationActions } from '../actions';
 import { firebase } from '../../utils';
 
-export function* signInWithGoogle() {
+export function* fetchNotifcations() {
   while (true) {
     try {
       const action = yield take(notificationActions.FETCH_NOTIFICATIONS_REQUEST);
@@ -26,3 +26,37 @@ export function* signInWithGoogle() {
     }
   }
 }
+
+// export function* createNotification() {
+//   while (true) {
+//     try {
+//       const action = yield take(notificationActions.CREATE_NOTIFICATION_REQUEST);
+
+//       const result = yield call(axios.get('', {
+//         params: {
+//           key: GOOGLE_MAPS_API_KEY,
+//           origin: '',
+//           destination: '',
+//         },
+//       }));
+//       const snapshot = yield call(
+//         firebase.firestore.addDocument,
+//         firebase.firestore.collection('/routes'),
+//         result.routes,
+//       );
+
+//       const notifications = map(doc => ({
+//         id: doc.id,
+//         ...doc.data(),
+//       }), snapshot.docs);
+
+//       yield put(notificationActions.createNotificationSuccess({
+//         notifications,
+//       }));
+//     } catch (error) {
+//       yield put(notificationActions.createNotificationFailure({
+//         error,
+//       }));
+//     }
+//   }
+// }

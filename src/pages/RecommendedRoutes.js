@@ -48,7 +48,7 @@ const RecommendedRoutes = () => {
   }
   return (
     <S.Wrapper>
-      <AppBar title="추천 경로" />
+      <AppBar>추천 경로</AppBar>
       <S.SelectWrapper>
         <S.FormControl>
           <Select

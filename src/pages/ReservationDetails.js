@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  DateField, OriginField, DestinationField, AppBar,
+  ReservationField, OriginField, DestinationField, AppBar,
 } from '../components/common';
-import { RouteField } from '../components';
+import { RouteField } from '../components/reservation-details';
 
 const S = {
   Wrapper: styled.div`
@@ -14,10 +14,8 @@ const S = {
 
 const ReservationDetails = () => (
   <S.Wrapper>
-    <AppBar
-      title="알람예약 상세보기"
-    />
-    <DateField />
+    <AppBar>알람예약 상세보기</AppBar>
+    <ReservationField />
     <OriginField />
     <DestinationField />
     <RouteField />

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AlertBefore, HomeLocation } from '../components';
+import { AlertBefore, HomeLocation } from '../components/profile';
 import { AppBar } from '../components/common';
 
 const S = {
@@ -14,9 +14,7 @@ const S = {
 
 const Profile = () => (
   <S.Wrapper>
-    <AppBar
-      title="내 프로필 설정"
-    />
+    <AppBar>내 프로필 설정</AppBar>
     <HomeLocation />
     <AlertBefore />
   </S.Wrapper>

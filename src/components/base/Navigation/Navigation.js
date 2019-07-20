@@ -36,13 +36,14 @@ const Navigation = ({ location }) => {
         component={Link}
         to="/location"
         label="막차 알람"
-        icon={<DirectionsBus />}
+        icon={<InsertInvitation />}
       />
       <BottomNavigationAction
         component={Link}
         to="/"
         label="지금 집으로"
-        icon={<InsertInvitation />}
+
+        icon={<DirectionsBus />}
       />
       <BottomNavigationAction
         component={Link}
