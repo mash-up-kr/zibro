@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   DateField, OriginField, DestinationField, AppBar,
 } from '../components/common';
-import { RouteField, DetailRoute } from '../components';
+import { RouteField } from '../components';
 
 const S = {
   Wrapper: styled.div`
@@ -21,7 +21,6 @@ const ReservationDetails = () => (
     <OriginField />
     <DestinationField />
     <RouteField />
-    <DetailRoute />
   </S.Wrapper>
 );
 

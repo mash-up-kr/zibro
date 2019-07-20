@@ -7,7 +7,6 @@ import { ThemeProvider } from 'styled-components';
 import { CssBaseline } from '@material-ui/core';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DayjsUtils from '@date-io/dayjs';
-import ko from 'dayjs/locale/ko';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import {
   AuthProvider, Layout, PrivateRoute, PublicRoute,
@@ -26,7 +25,7 @@ const App = () => (
     <AuthProvider>
       <ThemeProvider theme={theme}>
         <MuiThemeProvider theme={theme}>
-          <MuiPickersUtilsProvider utils={DayjsUtils} locale={ko}>
+          <MuiPickersUtilsProvider utils={DayjsUtils}>
             <StylesProvider injectFirst>
               <GlobalStyle />
               <CssBaseline />
