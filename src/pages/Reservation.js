@@ -2,7 +2,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { ReserveButton, ReserveScript } from '../components';
+import { ReserveButton, ReserveScript } from '../components/reservation';
 import {
   DateField, OriginField, DestinationField, AppBar,
 } from '../components/common';
@@ -16,7 +16,7 @@ const S = {
   `,
 };
 
-const Reserve = () => {
+const Reservation = () => {
   // const [values, setValues] = useState({ values: [] });
 
   // const dispatch = useDispatch();
@@ -41,4 +41,4 @@ const Reserve = () => {
   );
 };
 
-export default Reserve;
+export default Reservation;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AlertBefore, HomeLocation } from '../components';
+import { AlertBefore, HomeLocation } from '../components/profile';
 import { AppBar } from '../components/common';
 
 const S = {

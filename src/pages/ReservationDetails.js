@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   DateField, OriginField, DestinationField, AppBar,
 } from '../components/common';
-import { RouteField } from '../components';
+import { RouteField } from '../components/reservation-details';
 
 const S = {
   Wrapper: styled.div`
