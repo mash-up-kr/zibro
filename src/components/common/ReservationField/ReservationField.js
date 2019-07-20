@@ -60,8 +60,12 @@ const ReservationField = ({ field, className }) => (
       {/* <S.Field>2019년 05월 03일</S.Field> */}
       <DatePicker {...field} />
     </div>
-    <S.Button type="button" color="primary" variant="outlined">
-      변경
+    <S.Button
+      type="button"
+      color="primary"
+      variant="outlined"
+    >
+        변경
     </S.Button>
   </S.Wrapper>
 );

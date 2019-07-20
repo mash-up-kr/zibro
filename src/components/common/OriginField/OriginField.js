@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import { Place } from '@material-ui/icons';
+import LocationPicker from '../LocationPicker';
 
 const S = {
   Wrapper: styled.div`
@@ -51,25 +52,46 @@ const S = {
   `,
 };
 
-const OriginField = ({ className }) => (
-  <S.Wrapper className={className}>
-    <S.Place />
-    <div>
-      <S.Label>출발지</S.Label>
-      <S.Field>강남역</S.Field>
-    </div>
-    <S.Button type="button" color="primary" variant="outlined">
-      변경
-    </S.Button>
-  </S.Wrapper>
-);
+const OriginField = ({ className, field }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = useCallback(() => setOpen(true), []);
+  const handleClose = useCallback(() => setOpen(false), []);
+
+  return (
+    <S.Wrapper className={className}>
+      <S.Place />
+      <div>
+        <S.Label>출발지</S.Label>
+        <S.Field>강남역</S.Field>
+      </div>
+      <S.Button
+        type="button"
+        color="primary"
+        variant="outlined"
+        onClick={handleOpen}
+      >
+        변경
+      </S.Button>
+      {open && (
+        <LocationPicker field={field} onClose={handleClose} />
+      )}
+    </S.Wrapper>
+  );
+};
 
 OriginField.propTypes = {
   className: PropTypes.string,
+  field: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    value: PropTypes.shape({}).isRequired,
+    onChange: PropTypes.func.isRequired,
+  }),
 };
 
 OriginField.defaultProps = {
   className: undefined,
+  field: {},
 };
 
 export default OriginField;

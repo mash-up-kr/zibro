@@ -9,11 +9,13 @@ const S = {
     color:#d7d9ec;
   `,
 };
-const BackButton = ({ className, type, onClick }) => (
+const BackButton = ({
+  className, size, type, onClick,
+}) => (
   <S.IconButton
     className={className}
     type={type}
-    size="medium"
+    size={size}
     onClick={onClick}
   >
     <ArrowBack />
@@ -22,12 +24,14 @@ const BackButton = ({ className, type, onClick }) => (
 
 BackButton.propTypes = {
   className: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   onClick: PropTypes.func,
 };
 
 BackButton.defaultProps = {
   className: undefined,
+  size: 'medium',
   type: 'button',
   onClick: () => {},
 };
