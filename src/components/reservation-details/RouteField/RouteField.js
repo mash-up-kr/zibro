@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { DetailRoute } from '../../common';
 import { placeIcon } from '../../../assets';
 
 const S = {
@@ -47,14 +48,18 @@ const S = {
 };
 
 const RouteField = () => (
-  <S.Wrapper>
-    <S.Icon src={placeIcon} alt="place-icon" />
-    <div className="RouteField">
-      <S.Label>상세 경로</S.Label>
-      <S.Field>1시간 40분</S.Field>
-      <S.SubField>오후 11:45 ~ 오전 1:30</S.SubField>
-    </div>
-  </S.Wrapper>
+  <>
+    <S.Wrapper>
+      <S.Icon src={placeIcon} alt="place-icon" />
+      <div className="RouteField">
+        <S.Label>상세 경로</S.Label>
+        <S.Field>1시간 40분</S.Field>
+        <S.SubField>오후 11:45 ~ 오전 1:30</S.SubField>
+      </div>
+    </S.Wrapper>
+    <DetailRoute />
+  </>
+
 );
 
 export default RouteField;
