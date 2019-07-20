@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { IconButton, Paper } from '@material-ui/core';
 import { Clear, Event, Place } from '@material-ui/icons';
 import { map } from 'lodash/fp';
+import dayjs from 'dayjs';
 
 const S = {
   NotificationList: styled.ul`
@@ -64,7 +65,7 @@ const S = {
 
 const Notifications = ({ notifications }) => (
   <div>
-    {notifications
+    {notifications.data
       ? (
         <S.NotificationList>
           {map(notification => (
@@ -84,7 +85,7 @@ const Notifications = ({ notifications }) => (
                       <S.Label>
                         예약 날짜
                       </S.Label>
-                      <S.Value>2019년 6월 22일</S.Value>
+                      <S.Value>{dayjs(notification.sendAt).format('YYYY년 MM월 DD일')}</S.Value>
                     </div>
                   </S.Row>
                   <S.Row>
@@ -99,7 +100,7 @@ const Notifications = ({ notifications }) => (
                 </S.NotificationItemBody>
               </Paper>
             </S.NotificationItem>
-          ), notifications)}
+          ), notifications.data)}
         </S.NotificationList>
       )
       : (
@@ -109,7 +110,11 @@ const Notifications = ({ notifications }) => (
 );
 
 Notifications.propTypes = {
-  notifications: PropTypes.arrayOf(PropTypes.shape({})),
+  notifications: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.shape({})),
+    loading: PropTypes.bool,
+    error: PropTypes.shape({}),
+  }),
 };
 
 Notifications.defaultProps = {

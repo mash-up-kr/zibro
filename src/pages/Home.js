@@ -1,16 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { NotificationsActive } from '@material-ui/icons';
 import { get } from 'lodash/fp';
+import { notification as notificationActions } from '../store/actions';
 import { noTextHero } from '../assets';
 import { firebase } from '../utils';
 import { Notifications, Title } from '../components/home';
-
-const notifications = [
-  { id: 0 },
-  { id: 1 },
-  { id: 2 },
-];
 
 const S = {
   Wrapper: styled.div`
@@ -70,6 +66,16 @@ const S = {
 
 const Home = () => {
   const user = useMemo(() => firebase.auth.getCurrentUser(), []);
+
+  const notifications = useSelector(state => state.notification.notifications);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(notificationActions.fetchNotificationsRequest({ uid: user.uid }));
+  }, [dispatch, user]);
+
+  console.log(notifications);
 
   return (
     <S.Wrapper>

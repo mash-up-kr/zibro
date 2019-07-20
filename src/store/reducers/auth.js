@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => produce(state, (draft) => {
-  switch (action) {
+  switch (action.type) {
     case auth.SIGN_IN_WITH_GOOGLE_REQUEST:
       draft.user.loading = true;
       break;

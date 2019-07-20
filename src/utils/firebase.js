@@ -9,6 +9,18 @@ const auth = {
   onAuthStateChanged: (...args) => firebase.auth().onAuthStateChanged(...args),
 };
 
-const firestore = {};
+const firestore = {
+  doc: path => firebase.firestore().doc(path),
+  collection: path => firebase.firestore().collection(path),
+  getCollection: async (pathOrRef) => {
+    const collection = typeof pathOrRef === 'string'
+      ? firebase.firestore().collection(pathOrRef)
+      : pathOrRef;
+    const snapshot = await collection.get();
+
+    return snapshot;
+  },
+  runTransaction: updateFunction => firebase.firestore().runTransaction(updateFunction),
+};
 
 export { auth, firestore };
