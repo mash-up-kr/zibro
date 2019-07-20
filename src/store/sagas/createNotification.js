@@ -8,6 +8,7 @@ import { firebase } from '../../utils';
 export function* createNotification() {
   while (true) {
     try {
+      /* eslint-disable */
       const action = yield take(createNotificationActions.CREATE_NOTIFICATION_REQUEST);
 
       const result = yield call(axios.get('', {

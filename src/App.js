@@ -14,6 +14,7 @@ import {
 import { Loader } from './components/common';
 import {
   Home, Location, NotFound, Profile, Reserve, SignIn, ReservationDetails,
+  RecommendedRoutes, RecommendedRouteDetail,
 } from './pages';
 import configureStore from './store';
 import { GlobalStyle, theme } from './styles';
@@ -32,7 +33,7 @@ const App = () => (
               <Router>
                 <Suspense fallback={<Loader />}>
                   <Switch>
-                    <Route exact path={['/', '/location', '/profile', '/reserve', '/reservation-details']}>
+                    <Route exact path={['/', '/location', '/profile', '/reserve', '/reservation-details', '/recommended-routes', '/recommended-routes/:rid']}>
                       <Layout>
                         <Switch>
                           <PrivateRoute exact path="/" component={Home} />
@@ -40,6 +41,10 @@ const App = () => (
                           <PrivateRoute exact path="/profile" component={Profile} />
                           <PrivateRoute exact path="/reserve" component={Reserve} />
                           <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
+                          <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
+                          <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
+                          <PrivateRoute exact path="/recommended-routes" component={RecommendedRoutes} />
+                          <PrivateRoute exact path="/recommended-routes/:rid" component={RecommendedRouteDetail} />
                           <Redirect to="/not-found" />
                         </Switch>
                       </Layout>
