@@ -49,10 +49,17 @@ const OriginField = ({ className, field }) => {
         <S.Label>출발지</S.Label>
         <S.Field>강남역</S.Field>
       </div>
-      <S.Button type="button" color="primary" variant="outlined" onClick={handleOpen}>
+      <S.Button
+        type="button"
+        color="primary"
+        variant="outlined"
+        onClick={handleOpen}
+      >
         변경
       </S.Button>
-      {open && <LocationPicker field={field} onClose={handleClose} />}
+      {open && (
+        <LocationPicker field={field} onClose={handleClose} />
+      )}
     </S.Wrapper>
   );
 };

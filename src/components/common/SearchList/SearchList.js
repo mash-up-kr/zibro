@@ -64,14 +64,17 @@ const SearchList = ({ className }) => {
         </S.IconWrapper>
         집으로
       </S.SearchItem>
-      {map(search => (
-        <S.SearchItem key={search}>
-          <S.IconWrapper>
-            <S.LocalOffer />
-          </S.IconWrapper>
-          {search}
-        </S.SearchItem>
-      ), searchList)}
+      {map(
+        search => (
+          <S.SearchItem key={search}>
+            <S.IconWrapper>
+              <S.LocalOffer />
+            </S.IconWrapper>
+            {search}
+          </S.SearchItem>
+        ),
+        searchList,
+      )}
     </S.Wrapper>
   );
 };
