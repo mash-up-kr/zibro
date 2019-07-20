@@ -14,9 +14,7 @@ const S = {
 
 const Profile = () => (
   <S.Wrapper>
-    <AppBar
-      title="내 프로필 설정"
-    />
+    <AppBar>내 프로필 설정</AppBar>
     <HomeLocation />
     <AlertBefore />
   </S.Wrapper>

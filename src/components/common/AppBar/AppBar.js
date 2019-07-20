@@ -21,7 +21,7 @@ const S = {
   `,
 };
 
-const AppBar = ({ history, title }) => {
+const AppBar = ({ history, children }) => {
   const handleClick = useCallback(() => history.goBack(), [history]);
 
   return (
@@ -29,7 +29,7 @@ const AppBar = ({ history, title }) => {
       <Toolbar>
         <BackButton onClick={handleClick} />
         <S.Title variant="h6" color="inherit">
-          {title}
+          {children}
         </S.Title>
       </Toolbar>
     </S.AppBar>
@@ -40,7 +40,7 @@ AppBar.propTypes = {
   history: PropTypes.shape({
     goBack: PropTypes.func.isRequired,
   }).isRequired,
-  title: PropTypes.elementType.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default withRouter(AppBar);
