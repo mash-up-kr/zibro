@@ -4,8 +4,8 @@ import {
   DatePicker as MuiDatePicker,
 } from '@material-ui/pickers';
 
+// TODO: 스타일, 변경 버튼 클릭시 모달 띄우게 수정
 const DatePicker = () => {
-  // The first commit of Material-UI
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
   function handleDateChange(date) {
