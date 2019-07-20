@@ -76,8 +76,40 @@ export default createMuiTheme({
       'Helvetica',
       'sans-serif',
     ].join(','),
+    h1: {
+      color: '#000',
+      fontSize: '1.375rem',
+      fontWeight: 500,
+    },
+    h2: {
+      color: '#000',
+      fontSize: '1.25rem',
+      fontWeight: 500,
+      lineHeight: 1.3,
+    },
+    h3: {
+      color: '#212121',
+      fontSize: '1rem',
+      fontWeight: 500,
+      lineHeight: 1,
+    },
+    subtitle1: {
+      color: 'rgba(0, 0, 0, 0.87)',
+      fontSize: '1rem',
+      lineHeight: 1.5,
+    },
+    body1: {
+      color: '#FFF',
+      fontSize: '0.875rem',
+      lineHeight: 1.43,
+    },
     button: {
+      fontSize: '0.875rem',
       textTransform: 'initial',
+    },
+    caption: {
+      color: '#424242',
+      fontSize: '0.75rem',
     },
   },
   overrides: {

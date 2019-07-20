@@ -1,8 +1,15 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { BackButton, SearchField } from '../components/common';
+import { Map } from '../components/location';
 
 const S = {
+  Wrapper: styled.div`
+    height: 100%;
+  `,
+  Main: styled.main`
+    height: 100%;
+  `,
   FieldGroup: styled.div`
     position: relative;
     padding: 12px;
@@ -22,14 +29,15 @@ const Location = () => {
   const handleClear = useCallback(() => setValue(''), []);
 
   return (
-    <div>
-      <main>
+    <S.Wrapper>
+      <S.Main>
         <S.FieldGroup>
           <SearchField value={value} onChange={handleChange} onClear={handleClear} />
           <SearchField value={value} onChange={handleChange} onClear={handleClear} />
         </S.FieldGroup>
-      </main>
-    </div>
+        <Map />
+      </S.Main>
+    </S.Wrapper>
   );
 };
 
