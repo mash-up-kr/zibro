@@ -14,7 +14,9 @@ const S = {
 
 const ReserveScript = () => (
   <S.Wrapper>
-    언제, 어디로 가는<br/>막차 알림을 예약하시겠어요?
+    언제, 어디로 가는
+    <br />
+    막차 알림을 예약하시겠어요?
   </S.Wrapper>
 );
 export default ReserveScript;

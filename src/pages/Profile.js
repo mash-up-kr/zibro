@@ -12,16 +12,14 @@ const S = {
   `,
 };
 
-const Profile = () => {
-  return (
-    <S.Wrapper>
-      <AppBar
-        title={'내 프로필 설정'}
-      />
-      <HomeLocation/>
-      <AlertBefore/>
-    </S.Wrapper>
-  );
-};
+const Profile = () => (
+  <S.Wrapper>
+    <AppBar
+      title="내 프로필 설정"
+    />
+    <HomeLocation />
+    <AlertBefore />
+  </S.Wrapper>
+);
 
 export default Profile;

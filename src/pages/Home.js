@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 import { NotificationsActive } from '@material-ui/icons';
 import { get } from 'lodash/fp';
 import { noTextHero } from '../assets';
@@ -66,6 +68,15 @@ const S = {
     font-size: 0.75rem;
     font-weight: 300;
   `,
+  Fab: styled(Fab)`
+    position:fixed;
+    right:20px;
+    bottom:76px;
+    border-image-source: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0));
+  `,
+  AddIcon: styled(AddIcon)`
+    color:#000;
+  `,
 };
 
 const Home = () => {
@@ -96,6 +107,9 @@ const Home = () => {
         </S.Row>
         <Notifications notifications={notifications} />
       </S.Main>
+      <S.Fab color="secondary" aria-label="Add">
+        <S.AddIcon />
+      </S.Fab>
     </S.Wrapper>
   );
 };

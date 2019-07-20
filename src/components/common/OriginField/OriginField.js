@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { default as ChangeButton } from '../ChangeButton';
+import ChangeButton from '../ChangeButton';
 import { placeIcon } from '../../../assets';
 
 const S = {
@@ -32,17 +32,15 @@ const S = {
   `,
 };
 
-const OriginField = () => {
-  return (
-    <S.Wrapper>
+const OriginField = () => (
+  <S.Wrapper>
     <S.Icon src={placeIcon} alt="place-icon" />
-    <div className={'changeRoute'}>
+    <div className="changeRoute">
       <S.Label>출발지</S.Label>
       <S.Field>강남역</S.Field>
     </div>
-    <ChangeButton/>
+    <ChangeButton />
   </S.Wrapper>
-  );
-};
+);
 
 export default OriginField;

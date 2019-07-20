@@ -5,12 +5,14 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { CssBaseline } from '@material-ui/core';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DayjsUtils from '@date-io/dayjs';
+import ko from 'dayjs/locale/ko';
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import {
   AuthProvider, Layout, PrivateRoute, PublicRoute,
 } from './components/base';
 import { Loader } from './components/common';
-
 import {
   Home, Location, NotFound, Profile, Reserve, SignIn, ReservationDetails,
 } from './pages';
@@ -21,9 +23,10 @@ const store = configureStore();
 
 const App = () => (
   <Provider store={store}>
-    <AuthProvider>
-      <ThemeProvider theme={theme}>
-        <MuiThemeProvider theme={theme}>
+   <AuthProvider>
+    <ThemeProvider theme={theme}>
+      <MuiThemeProvider theme={theme}>
+        <MuiPickersUtilsProvider utils={DayjsUtils} locale={ko}>
           <StylesProvider injectFirst>
             <GlobalStyle />
             <CssBaseline />
@@ -49,9 +52,10 @@ const App = () => (
               </Suspense>
             </Router>
           </StylesProvider>
-        </MuiThemeProvider>
-      </ThemeProvider>
-    </AuthProvider>
+        </MuiPickersUtilsProvider>
+      </MuiThemeProvider>
+    </ThemeProvider>
+   </AuthProvider>
   </Provider>
 );
 

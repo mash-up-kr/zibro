@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReserveButton, ReserveScript } from '../components';
-import { DateField, OriginField, DestinationField, AppBar } from '../components/common';
+import {
+  DateField, OriginField, DestinationField, AppBar,
+} from '../components/common';
 
 const S = {
   Wrapper: styled.div`
@@ -12,19 +14,17 @@ const S = {
   `,
 };
 
-const Reservation = () => {
-  return (
-    <S.Wrapper>
-      <AppBar
-        title={'예약하기'}
-      />
-      <ReserveScript/>
-      <DateField/>
-      <OriginField/>
-      <DestinationField/>
-      <ReserveButton/>
-    </S.Wrapper>
-  );
-};
+const Reserve = () => (
+  <S.Wrapper>
+    <AppBar
+      title="예약하기"
+    />
+    <ReserveScript />
+    <DateField />
+    <OriginField />
+    <DestinationField />
+    <ReserveButton />
+  </S.Wrapper>
+);
 
-export default Reservation;
+export default Reserve;

@@ -30,7 +30,7 @@ const S = {
     display:flex;
     flex-wrap:wrap;
   `,
-  Button:styled.div`
+  Button: styled.div`
     width:100px;
     padding:8px 0;
     margin:4px;
@@ -48,7 +48,7 @@ const S = {
 const AlertBefore = () => (
   <S.Wrapper>
     <S.Icon src={activeIcon} alt="active-icon" />
-    <div className={'AlertBefore'}>
+    <div className="AlertBefore">
       <S.Label>막차 출발 알림</S.Label>
       <S.ButtonField>
         <S.Button>30분 전</S.Button>
@@ -56,7 +56,7 @@ const AlertBefore = () => (
         <S.Button>10분 전</S.Button>
       </S.ButtonField>
     </div>
-    <ChangeButton/>
+    <ChangeButton />
   </S.Wrapper>
 );
 

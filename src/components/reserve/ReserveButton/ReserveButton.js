@@ -18,7 +18,7 @@ const S = {
 
 const ReserveButton = () => (
   <S.Button variant="contained">
-    <Link to="/reserve-setting">막차 알림 예약하기</Link>
+    <Link to="/">막차 알림 예약하기</Link>
   </S.Button>
 );
 
