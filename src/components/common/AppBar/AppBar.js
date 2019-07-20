@@ -7,10 +7,6 @@ import BackButton from '../BackButton';
 
 const S = {
   AppBar: styled(MuiAppBar)`
-<<<<<<< HEAD
-    box-shadow:none;
-    background-color:#3e50b4;
-=======
     box-shadow: none;
   `,
   Toolbar: styled(Toolbar)`
@@ -23,7 +19,6 @@ const S = {
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
->>>>>>> dc60eb633a66736e4b80d297704f17a5f25fb8b2
   `,
   Title: styled(Typography)`
     text-align: center;

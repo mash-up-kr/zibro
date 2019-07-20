@@ -23,6 +23,12 @@ const S = {
     padding-left: 28px;
     padding-bottom:24px;
     padding-top:24px;
+    .cost {
+      background-color: red;
+    }
+    .field {
+      color: #fff;
+    }
   `,
   Button: styled(Button)`
     padding:18px 0;
