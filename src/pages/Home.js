@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { NotificationsActive } from '@material-ui/icons';
 import { get } from 'lodash/fp';
-import { notification as notificationActions } from '../store/actions';
+import { notification as notificationActions, route as routeActions } from '../store/actions';
 import { noTextHero } from '../assets';
 import { firebase } from '../utils';
 import { Notifications, Title } from '../components/home';
@@ -19,7 +20,7 @@ const S = {
     height: 100%;
     max-height: 100%;
     padding: 8vh 0 0;
-    background-color: ${({ theme }) => theme.palette.primary.light};
+    background-color: #d7d9ec;
   `,
   Header: styled.header`
     width: 90%;
@@ -83,6 +84,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(routeActions.fetchRoutesRequest());
     dispatch(notificationActions.fetchNotificationsRequest({ uid: user.uid }));
   }, [dispatch, user]);
 
@@ -111,7 +113,12 @@ const Home = () => {
         </S.Row>
         <Notifications notifications={notifications} />
       </S.Main>
-      <S.Fab color="secondary" aria-label="Add">
+      <S.Fab
+        component={Link}
+        color="secondary"
+        aria-label="Add"
+        to="/reservation"
+      >
         <S.AddIcon />
       </S.Fab>
     </S.Wrapper>

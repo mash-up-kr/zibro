@@ -9,6 +9,7 @@ const S = {
   Wrapper: styled.div`
     display: flex;
     flex-direction: column;
+    padding-top:60px;
   `,
 };
 

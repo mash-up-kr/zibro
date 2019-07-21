@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { activeIcon } from '../../../assets';
+import { Alarm } from '@material-ui/icons';
 
 const S = {
   Wrapper: styled.div`
@@ -10,11 +10,10 @@ const S = {
     display:flex;
     align-items:start;
   `,
-  Icon: styled.img`
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    margin-right:9px;
+  Alarm: styled(Alarm)`
+    margin-right: 8px;
+    color: ${({ theme }) => theme.palette.primary.light};
+    font-size: 1.5rem;
   `,
   Label: styled.div`
     font-family: NotoSansCJKkr;
@@ -42,18 +41,32 @@ const S = {
     letter-spacing: 0.5px;
     color: #ffffff;
   `,
+  DisabledButton: styled.div`
+    width:100px;
+    padding:8px 0;
+    margin:4px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    background-color: #2f3e9e;
+    text-align:center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    opacity:0.3;
+  `,
 };
 
 const AlertBefore = () => (
   <S.Wrapper>
-    <S.Icon src={activeIcon} alt="active-icon" />
+    <S.Alarm />
     <div className="AlertBefore">
       <S.Label>막차 출발 알림</S.Label>
       <S.ButtonField>
-        <S.Button>1시간 전</S.Button>
+        <S.DisabledButton>1시간 전</S.DisabledButton>
         <S.Button>30분 전</S.Button>
-        <S.Button>20분 전</S.Button>
-        <S.Button>10분 전</S.Button>
+        <S.DisabledButton>20분 전</S.DisabledButton>
+        <S.DisabledButton>10분 전</S.DisabledButton>
       </S.ButtonField>
     </div>
   </S.Wrapper>

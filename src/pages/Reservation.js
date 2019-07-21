@@ -2,11 +2,13 @@ import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { Formik, Form, FastField } from 'formik';
 import * as Yup from 'yup';
 import {
   OriginField, DestinationField, ReservationField, AppBar,
 } from '../components/common';
+import { AlertBefore } from '../components/profile';
 
 const Schema = Yup.object().shape({
   sendAt: Yup.number()
@@ -27,7 +29,7 @@ const S = {
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
-    padding-top: 56px;
+    padding-top: 60px;
   `,
   Main: styled.main`
     display: flex;
@@ -80,11 +82,14 @@ const Reservation = () => {
             <FastField name="sendAt" component={ReservationField} />
             <FastField name="origin" component={OriginField} />
             <FastField name="destination" component={DestinationField} />
+            <FastField name="alertBefore" component={AlertBefore} />
             <S.Actions>
               <S.Button
+                component={Link}
                 type="submit"
                 color="primary"
                 variant="contained"
+                to="/"
               >
                 막차 알림 예약하기
               </S.Button>

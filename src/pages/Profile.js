@@ -9,6 +9,7 @@ const S = {
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+    padding-top:56px;
   `,
 };
 

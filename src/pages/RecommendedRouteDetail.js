@@ -10,6 +10,7 @@ const S = {
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+    padding-top:60px;
   `,
   Script: styled.div`
     padding:24px;
@@ -40,6 +41,64 @@ const S = {
     border-radius:0;
   `,
 };
+
+// TODO: 택시조합 result 배열 받아오기
+const routes = [
+  [{
+    step: 0,
+    stepDuration: '7분',
+    instructions: '남서울농협남현동지점까지 도보',
+    travelMode: 'WALKING',
+  },
+  {
+    step: 1,
+    instructions: '버스 상계주공7단지행',
+    transitDetail: {
+      arrivalStopName: '강남역.역삼세무서',
+      departureStopName: '남서울농협남현동지점',
+      headSign: '상계주공7단지',
+      transitColor: '#374ff2',
+      transitNumber: 'N61',
+      transitType: 'BUS',
+      numStops: 15,
+    },
+    travelMode: 'TRANSIT',
+  },
+  {
+    step: 2,
+    stepDuration: '3분',
+    instructions: '대한민국 서울특별시 중구 신당동 366-144까지 도보',
+    travelMode: 'WALKING',
+  },
+  ],
+  [{
+    step: 0,
+    stepDuration: '7분',
+    instructions: '남서울농협남현동지점까지 도보',
+    travelMode: 'WALKING',
+  },
+  {
+    step: 1,
+    instructions: '버스 상계주공7단지행',
+    transitDetail: {
+      arrivalStopName: '강남역.역삼세무서',
+      departureStopName: '남서울농협남현동지점',
+      headSign: '상계주공7단지',
+      transitColor: '#374ff2',
+      transitNumber: 'N61',
+      transitType: 'BUS',
+      numStops: 15,
+    },
+    travelMode: 'TRANSIT',
+  },
+  {
+    step: 2,
+    stepDuration: '3분',
+    instructions: '대한민국 서울특별시 중구 신당동 366-144까지 도보',
+    travelMode: 'WALKING',
+  },
+  ],
+];
 
 const RecommendedRoutes = () => {
   const handleClick = useCallback(() => {
@@ -76,7 +135,12 @@ const RecommendedRoutes = () => {
       <S.Script>
       추천 경로 이용을 위해 택시를 예약해보세요.
       </S.Script>
-      <S.DetailRoute />
+      <S.DetailRoute
+        duration="1시간 40분"
+        arrivalTime="오전 2시 40분"
+        departureTime="오후 11시 40분"
+        steps={routes}
+      />
       <S.Button variant="contained" onClick={handleClick}>
       택시 예약하기
       </S.Button>
