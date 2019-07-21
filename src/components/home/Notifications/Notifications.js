@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { IconButton, Paper } from '@material-ui/core';
 import { Clear, Event, Place } from '@material-ui/icons';
@@ -70,7 +71,7 @@ const Notifications = ({ notifications }) => (
         <S.NotificationList>
           {map(notification => (
             <S.NotificationItem key={notification.id}>
-              <Paper>
+              <Paper component={Link} to={`/reservation-details/${notification.id}`}>
                 <S.NotificationItemHeader>
                   <S.HeaderTitle>알람 예약</S.HeaderTitle>
                   <S.Count value="1">1</S.Count>
