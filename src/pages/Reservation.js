@@ -37,7 +37,7 @@ const S = {
     display: flex;
     flex-direction: column;
     overflow: auto;
-    height: 100%;
+    height: 100% !important;
   `,
   Form: styled(Form)`
     display: flex;

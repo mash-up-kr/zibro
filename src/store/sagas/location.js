@@ -10,7 +10,6 @@ export function* fetchPlaces() {
 
       yield put(locationActions.fetchPlacesSuccess({ places: response.data }));
     } catch (error) {
-      console.log(error);
       yield put(locationActions.fetchPlacesFailure({ error }));
     }
   }

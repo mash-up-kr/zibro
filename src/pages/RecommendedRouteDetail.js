@@ -28,7 +28,6 @@ const S = {
   Button: styled(Button)`
     padding:18px 0;
     margin-top: auto;
-    background-color:#2f3e9e;
     color:#fff;
     font-size: 14px;
     text-align: center;
@@ -88,7 +87,6 @@ const RecommendedRoutes = () => {
       appName: 'KakaoTaxi',
       storeURL: getInstallURL(),
       onUnsupportedEnvironment: () => {
-        console.log('unsupported environment');
       },
     };
 
@@ -108,7 +106,7 @@ const RecommendedRoutes = () => {
         steps={routes}
         expectedCost="10,500원"
       />
-      <S.Button variant="contained" onClick={handleClick}>
+      <S.Button variant="contained" color="primary" onClick={handleClick}>
       택시 예약하기
       </S.Button>
     </S.Wrapper>

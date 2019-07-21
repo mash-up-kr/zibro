@@ -12,6 +12,7 @@ const S = {
   Content: styled.div`
     flex-grow: 1;
     overflow: auto;
+    height:100%;
   `,
   Navigation: styled(Navigation)`
     margin-top: auto;
