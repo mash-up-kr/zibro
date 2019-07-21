@@ -17,7 +17,7 @@ const S = {
     flex-direction: column;
     align-items: center;
     overflow: auto;
-    height: 100%;
+    height: 100vh;
     max-height: 100%;
     padding: 8vh 0 0;
     background-color: #d7d9ec;
@@ -87,8 +87,6 @@ const Home = () => {
     dispatch(routeActions.fetchRoutesRequest());
     dispatch(notificationActions.fetchNotificationsRequest({ uid: user.uid }));
   }, [dispatch, user]);
-
-  console.log(notifications);
 
   return (
     <S.Wrapper>

@@ -42,7 +42,6 @@ export function* fetchRoutes() {
         endY: startStops[0].y,
       });
 
-      console.log('res', res);
 
       // const [starts, destinations] = compose(
       //   chunk(2),
@@ -74,7 +73,6 @@ export function* fetchRoutes() {
 
       yield put(routeActions.fetchRoutesSuccess({ }));
     } catch (error) {
-      console.log('error', error);
       yield put(routeActions.fetchRoutesFailure({ error }));
     }
   }

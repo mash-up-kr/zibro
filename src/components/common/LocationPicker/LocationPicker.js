@@ -83,7 +83,7 @@ const LocationPicker = ({
     setValue(event.target.value);
 
     onSearch(event.target.value);
-  }, []);
+  }, [onSearch]);
   const handleFocus = useCallback(() => setFocused(true), []);
   const handleBlur = useCallback(() => setFocused(false), []);
 
