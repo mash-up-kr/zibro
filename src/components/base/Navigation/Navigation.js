@@ -7,8 +7,8 @@ import { AccountCircle, DirectionsBus, InsertInvitation } from '@material-ui/ico
 import { findIndex } from 'lodash/fp';
 
 const pathnames = [
-  '/location',
   '/',
+  '/location',
   '/profile',
 ];
 

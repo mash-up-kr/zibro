@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { NotificationsActive } from '@material-ui/icons';
-import { get } from 'lodash/fp';
+import { get, size } from 'lodash/fp';
 import { notification as notificationActions, route as routeActions } from '../store/actions';
 import { noTextHero } from '../assets';
 import { firebase } from '../utils';
@@ -103,10 +103,13 @@ const Home = () => {
         <S.Row>
           <S.Notification>
             <S.NotificationsActive />
-            <span>2</span>
+            <span>{size(notifications.data)}</span>
           </S.Notification>
           <S.HelperText>
-            하단 예약 2개 중 1개를 눌러 상세 경로를 확인하세요.
+            하단 예약
+            {' '}
+            {size(notifications.data)}
+            개 중 1개를 눌러 상세 경로를 확인하세요.
           </S.HelperText>
         </S.Row>
         <Notifications notifications={notifications} />
