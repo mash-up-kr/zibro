@@ -72,15 +72,20 @@ const S = {
 };
 
 /* eslint-disable no-unused-vars */
-const LocationPicker = ({ className, field, onClose }) => {
+const LocationPicker = ({
+  className, field, onClose, onSearch,
+}) => {
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(false);
   const [position, setPosition] = useState(null);
 
-  const handleChange = useCallback(event => setValue(event.target.value), []);
+  const handleChange = useCallback((event) => {
+    setValue(event.target.value);
+
+    onSearch(event.target.value);
+  }, []);
   const handleFocus = useCallback(() => setFocused(true), []);
   const handleBlur = useCallback(() => setFocused(false), []);
-  const handleGoogleApiLoaded = useCallback(({ map, maps }) => console.log(map), []);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(currentPosition => setPosition({
@@ -110,7 +115,7 @@ const LocationPicker = ({ className, field, onClose }) => {
         <S.BackButton type="button" size="small" onClick={onClose} />
         {focused && <S.SearchList />}
       </S.SearchBar>
-      <S.Map center={position} onGoogleApiLoaded={handleGoogleApiLoaded} />
+      <S.Map center={position} />
     </S.MapWrapper>
   );
 };
@@ -118,6 +123,7 @@ const LocationPicker = ({ className, field, onClose }) => {
 LocationPicker.propTypes = {
   className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
   field: PropTypes.shape({
     name: PropTypes.string.isRequired,
     value: PropTypes.shape({}).isRequired,

@@ -52,7 +52,7 @@ const S = {
   `,
 };
 
-const OriginField = ({ className, field }) => {
+const OriginField = ({ className, field, onSearch }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = useCallback(() => setOpen(true), []);
@@ -74,7 +74,11 @@ const OriginField = ({ className, field }) => {
         변경
       </S.Button>
       {open && (
-        <LocationPicker field={field} onClose={handleClose} />
+        <LocationPicker
+          field={field}
+          onClose={handleClose}
+          onSearch={onSearch}
+        />
       )}
     </S.Wrapper>
   );
@@ -87,11 +91,13 @@ OriginField.propTypes = {
     value: PropTypes.shape({}).isRequired,
     onChange: PropTypes.func.isRequired,
   }),
+  onSearch: PropTypes.func,
 };
 
 OriginField.defaultProps = {
   className: undefined,
   field: {},
+  onSearch: () => {},
 };
 
 export default OriginField;

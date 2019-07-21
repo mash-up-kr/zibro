@@ -1,3 +1,3 @@
 import http from './http';
 
-export const fetchPath = () => http.get('');
+export const fetchRoute = () => http.get('');

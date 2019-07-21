@@ -2,8 +2,10 @@ import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
+import { debounce } from 'lodash/fp';
 import { Formik, Form, FastField } from 'formik';
 import * as Yup from 'yup';
+import { location as locationActions } from '../store/actions';
 import {
   OriginField, DestinationField, ReservationField, AppBar,
 } from '../components/common';
@@ -58,6 +60,9 @@ const Reservation = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = useCallback(() => {}, []);
+  const handleSearch = useCallback(debounce(100, query => dispatch(
+    locationActions.fetchPlacesRequest({ query }),
+  )), [dispatch]);
 
   useEffect(() => {
     // dispatch();
@@ -78,8 +83,12 @@ const Reservation = () => {
         >
           <S.Form>
             <FastField name="sendAt" component={ReservationField} />
-            <FastField name="origin" component={OriginField} />
-            <FastField name="destination" component={DestinationField} />
+            <FastField name="origin">
+              {fieldProps => <OriginField onSearch={handleSearch} {...fieldProps} />}
+            </FastField>
+            <FastField name="destination" component={DestinationField}>
+              {fieldProps => <DestinationField onSearch={handleSearch} {...fieldProps} />}
+            </FastField>
             <S.Actions>
               <S.Button
                 type="submit"
