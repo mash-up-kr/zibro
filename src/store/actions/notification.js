@@ -6,6 +6,8 @@ export const CREATE_NOTIFICATION_REQUEST = 'notification/CREATE_NOTIFICATION_REQ
 export const CREATE_NOTIFICATION_SUCCESS = 'notification/CREATE_NOTIFICATION_SUCCESS';
 export const CREATE_NOTIFICATION_FAILURE = 'notification/CREATE_NOTIFICATION_FAILURE';
 
+export const INIT_NOTIFICATION = 'auth/INIT_NOTIFICATION';
+
 export const fetchNotificationsRequest = (payload = {}) => ({
   type: FETCH_NOTIFICATIONS_REQUEST,
   payload,
@@ -29,5 +31,10 @@ export const createNotificationSuccess = (payload = {}) => ({
 });
 export const createNotificationFailure = (payload = {}) => ({
   type: CREATE_NOTIFICATION_FAILURE,
+  payload,
+});
+
+export const initNotification = (payload = {}) => ({
+  type: INIT_NOTIFICATION,
   payload,
 });

@@ -24,10 +24,14 @@ const reducer = (state = initialState, action) => produce(state, (draft) => {
       break;
     case notification.CREATE_NOTIFICATION_SUCCESS:
       draft.notification.loading = false;
+      draft.notification.data = true;
       break;
     case notification.CREATE_NOTIFICATION_FAILURE:
       draft.notification.loading = false;
       draft.notification.error = action.payload.error;
+      break;
+    case notification.INIT_NOTIFICATION:
+      draft.notification = { data: null, loading: false, error: null };
       break;
     default:
   }
