@@ -91,7 +91,6 @@ const Reservation = () => {
             <FastField name="destination" component={DestinationField}>
               {fieldProps => <DestinationField onSearch={handleSearch} {...fieldProps} />}
             </FastField>
-            <FastField name="destination" component={DestinationField} />
             <FastField name="alertBefore" component={AlertBefore} />
             <S.Actions>
               <S.Button

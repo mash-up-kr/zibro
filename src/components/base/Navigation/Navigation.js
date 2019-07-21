@@ -35,21 +35,20 @@ const Navigation = ({ location }) => {
     >
       <BottomNavigationAction
         component={Link}
-        to="/location"
+        to="/"
         label="막차 알람"
         icon={<InsertInvitation />}
       />
       <BottomNavigationAction
         component={Link}
-        to="/"
+        to="/location"
         label="집으로"
-
         icon={<DirectionsBus />}
       />
       <BottomNavigationAction
         component={Link}
         to="/profile"
-        label="프로필 설정"
+        label="기본 설정"
         icon={<AccountCircle />}
       />
     </S.BottomNavigation>
