@@ -27,36 +27,22 @@ export function* fetchNotifcations() {
   }
 }
 
-// export function* createNotification() {
-//   while (true) {
-//     try {
-//       const action = yield take(notificationActions.CREATE_NOTIFICATION_REQUEST);
+export function* createNotification() {
+  while (true) {
+    try {
+      const action = yield take(notificationActions.CREATE_NOTIFICATION_REQUEST);
 
-//       const result = yield call(axios.get('', {
-//         params: {
-//           key: GOOGLE_MAPS_API_KEY,
-//           origin: '',
-//           destination: '',
-//         },
-//       }));
-//       const snapshot = yield call(
-//         firebase.firestore.addDocument,
-//         firebase.firestore.collection('/routes'),
-//         result.routes,
-//       );
+      const user = yield call(firebase.auth.getCurrentUser);
 
-//       const notifications = map(doc => ({
-//         id: doc.id,
-//         ...doc.data(),
-//       }), snapshot.docs);
+      yield call(
+        firebase.firestore.addDocument,
+        firebase.firestore.collection('/routes'),
+        { ...action.payload.values, user: user.uid },
+      );
 
-//       yield put(notificationActions.createNotificationSuccess({
-//         notifications,
-//       }));
-//     } catch (error) {
-//       yield put(notificationActions.createNotificationFailure({
-//         error,
-//       }));
-//     }
-//   }
-// }
+      yield put(notificationActions.createNotificationSuccess());
+    } catch (error) {
+      yield put(notificationActions.createNotificationFailure({ error }));
+    }
+  }
+}
