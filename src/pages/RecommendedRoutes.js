@@ -37,9 +37,9 @@ const S = {
 const routes = [
   [{
     step: 0,
-    stepDuration: '7분',
-    instructions: '남서울농협남현동지점까지 도보',
-    travelMode: 'WALKING',
+    stepDuration: '20분',
+    instructions: '현위치 택시 탑승',
+    travelMode: 'TAXI',
   },
   {
     step: 1,
@@ -57,15 +57,15 @@ const routes = [
   },
   {
     step: 2,
-    stepDuration: '3분',
-    instructions: '대한민국 서울특별시 중구 신당동 366-144까지 도보',
-    travelMode: 'WALKING',
+    stepDuration: '30분',
+    instructions: '강남역 앞 택시 탑승',
+    travelMode: 'TAXI',
   }],
   [{
     step: 0,
-    stepDuration: '7분',
-    instructions: '남서울농협남현동지점까지 도보',
-    travelMode: 'WALKING',
+    stepDuration: '17분',
+    instructions: '현위치 택시 탑승',
+    travelMode: 'TAXI',
   },
   {
     step: 1,
@@ -83,15 +83,55 @@ const routes = [
   },
   {
     step: 2,
+    instructions: '지하철 성수역행',
+    transitDetail: {
+      arrivalStopName: '강남역',
+      departureStopName: '사당역',
+      headSign: '성수역',
+      transitColor: '#0f993d',
+      transitNumber: '2호선',
+      transitType: 'SUBWAY',
+      numStops: 3,
+    },
+    travelMode: 'TRANSIT',
+  },
+  {
+    step: 3,
     stepDuration: '3분',
-    instructions: '대한민국 서울특별시 중구 신당동 366-144까지 도보',
+    instructions: '약수역',
+    travelMode: 'WALKING',
+  },
+  {
+    step: 4,
+    instructions: '지하철 대화역행',
+    transitDetail: {
+      arrivalStopName: '사당역',
+      departureStopName: '교대역',
+      headSign: '대화역',
+      transitColor: '#f26100',
+      transitNumber: '3호선',
+      transitType: 'SUBWAY',
+      numStops: 15,
+    },
+    travelMode: 'TRANSIT',
+  },
+  {
+    step: 5,
+    stepDuration: '3분',
+    instructions: '도보',
     travelMode: 'WALKING',
   },
   ],
 ];
+
+const duration = ['1시간 40분', '1시간 58분'];
+const arrivalTime = ['오전 2시 40분', '오전 2시 30분'];
+const departureTime = ['오후 11시 40분', '오후 11시 50분'];
+const expectedCost = ['10,500원', '11,350원'];
+
 const RecommendedRoutes = () => {
   const [values, setValues] = React.useState({
-    order: '추천 순',
+    order: 'cost',
   });
 
   function handleChange(event) {
@@ -118,13 +158,14 @@ const RecommendedRoutes = () => {
           </Select>
         </S.FormControl>
       </S.SelectWrapper>
-      {routes.map(route => (
-        <Link to="/id">
+      {routes.map((route, idx) => (
+        <Link to="/recommended-routes/1">
           <S.DetailRoute
-            duration="1시간 40분"
-            arrivalTime="오전 2시 40분"
-            departureTime="오후 11시 40분"
+            duration={duration[idx]}
+            arrivalTime={arrivalTime[idx]}
+            departureTime={departureTime[idx]}
             steps={route}
+            expectedCost={expectedCost[idx]}
           />
         </Link>
       ))}

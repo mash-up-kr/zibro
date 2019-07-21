@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { busIcon, walkIcon } from '../../../assets';
+import { taxiIcon, busIcon, walkIcon } from '../../../assets';
 
 const S = {
   Wrapper: styled.div`
@@ -93,12 +93,14 @@ const S = {
     font-size: 12px;
     letter-spacing: 0.38px;
     text-align: right;
+    background-color:#fff;
     color:#000000;
   `,
 };
 const icon = {
   WALKING: walkIcon,
   TRANSIT: busIcon,
+  TAXI: taxiIcon,
 };
 const DetailRoute = ({
   className, classes, duration, arrivalTime, departureTime, steps, expectedCost,
@@ -162,7 +164,7 @@ const DetailRoute = ({
                   style={{ backgroundColor: '#a4a4a4' }}
                 />
                 <S.Label>
-                  도보
+                  {step.instructions}
                   {step.stepDuration}
                 </S.Label>
               </S.Row>
