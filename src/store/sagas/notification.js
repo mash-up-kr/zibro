@@ -36,7 +36,7 @@ export function* createNotification() {
 
       yield call(
         firebase.firestore.addDocument,
-        firebase.firestore.collection('/routes'),
+        firebase.firestore.collection('/notifications'),
         { ...action.payload.values, user: user.uid },
       );
 

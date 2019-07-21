@@ -94,7 +94,14 @@ const Notifications = ({ notifications }) => (
                       <S.Label>
                         예약 경로
                       </S.Label>
-                      <S.Value>강남역 - 집</S.Value>
+                      <S.Value>
+                        {notification.origin.region}
+                        {' '}
+                        -
+                        {' '}
+                        {notification.destination.region}
+
+                      </S.Value>
                     </div>
                   </S.Row>
                 </S.NotificationItemBody>

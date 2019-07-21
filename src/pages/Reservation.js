@@ -80,8 +80,8 @@ const Reservation = () => {
           <Formik
             initialValues={{
               sendAt: Date.now(),
-              origin: { latitude: 37.506124, longitude: 127.030828 },
-              destination: { latitude: 37.300825, longtitude: 126.849464 },
+              origin: { latitude: 37.506124, longitude: 127.030828, region: '언주역' },
+              destination: { latitude: 37.300825, longtitude: 126.849464, region: '서울시 양천구 목동' },
             }}
             validationSchema={Schema}
             onSubmit={handleSubmit}
