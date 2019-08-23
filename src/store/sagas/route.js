@@ -28,16 +28,16 @@ export function* fetchRoutes() {
 
       const responses = yield all([
         ...map(startStop => call(routeApis.fetchTaxiRoute, {
-          startX: 126.9850380932383,
-          startY: 37.566567545861645,
+          startX: startPoint.x,
+          startY: startPoint.y,
           endX: startStop.x,
           endY: startStop.y,
         }), startStops),
         ...map(endStop => call(routeApis.fetchTaxiRoute, {
           startX: endStop.x,
           startY: endStop.y,
-          endX: 127.1033181463988,
-          endY: 37.403049076341794,
+          endX: endPoint.x,
+          endY: endPoint.y,
         }), endStops),
       ]);
 
