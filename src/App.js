@@ -33,14 +33,14 @@ const App = () => (
               <Router>
                 <Suspense fallback={<Loader />}>
                   <Switch>
-                    <Route exact path={['/', '/location', '/profile', '/reservation', '/reservation-details', '/recommended-routes', '/recommended-routes/:rid']}>
+                    <Route exact path={['/', '/location', '/profile', '/reservation', '/reservation-details/:nid', '/recommended-routes', '/recommended-routes/:rid']}>
                       <Layout>
                         <Switch>
                           <PrivateRoute exact path="/" component={Home} />
                           <PrivateRoute exact path="/location" component={Location} />
                           <PrivateRoute exact path="/profile" component={Profile} />
                           <PrivateRoute exact path="/reservation" component={Reservation} />
-                          <PrivateRoute exact path="/reservation-details" component={ReservationDetails} />
+                          <PrivateRoute exact path="/reservation-details/:nid" component={ReservationDetails} />
                           <PrivateRoute exact path="/recommended-routes" component={RecommendedRoutes} />
                           <PrivateRoute exact path="/recommended-routes/:rid" component={RecommendedRouteDetail} />
                           <Redirect to="/not-found" />

@@ -25,6 +25,7 @@ const S = {
     .input {
       height: 40px;
       padding: 0 2rem 0 2.5rem;
+      color: ${({ theme }) => theme.palette.primary.contrastText};
       font-size: ${({ theme }) => theme.typography.pxToRem(15)};
     }
     .notchedOutline {
