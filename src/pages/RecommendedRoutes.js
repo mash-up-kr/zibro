@@ -35,32 +35,39 @@ const S = {
 };
 // TODO: 택시조합 result 배열 받아오기
 const routes = [
-  [{
-    step: 0,
-    stepDuration: '20분',
-    instructions: '현위치 택시 탑승',
-    travelMode: 'TAXI',
-  },
-  {
-    step: 1,
-    instructions: '버스 상계주공7단지행',
-    transitDetail: {
-      arrivalStopName: '강남역.역삼세무서',
-      departureStopName: '남서울농협남현동지점',
-      headSign: '상계주공7단지',
-      transitColor: '#374ff2',
-      transitNumber: 'N61',
-      transitType: 'BUS',
-      numStops: 15,
+  [
+    {
+      step: 0,
+      stepDuration: '3분',
+      instructions: '도보',
+      travelMode: 'WALKING',
     },
-    travelMode: 'TRANSIT',
-  },
-  {
-    step: 2,
-    stepDuration: '30분',
-    instructions: '강남역 앞 택시 탑승',
-    travelMode: 'TAXI',
-  }],
+    {
+      step: 1,
+      stepDuration: '20분',
+      instructions: '건대입구역 택시 탑승',
+      travelMode: 'TAXI',
+    },
+    {
+      step: 1,
+      instructions: '양재역',
+      transitDetail: {
+        arrivalStopName: '강남역.역삼세무서',
+        departureStopName: '남서울농협남현동지점',
+        headSign: '상계주공7단지',
+        transitColor: '#374ff2',
+        transitNumber: 'N61',
+        transitType: 'BUS',
+        numStops: 15,
+      },
+      travelMode: 'TRANSIT',
+    },
+    {
+      step: 2,
+      stepDuration: '30분',
+      instructions: '강남역 앞 택시 탑승',
+      travelMode: 'TAXI',
+    }],
   [{
     step: 0,
     stepDuration: '17분',

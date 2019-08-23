@@ -6,7 +6,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { NotificationsActive } from '@material-ui/icons';
 import { get } from 'lodash/fp';
-import { notification as notificationActions, route as routeActions } from '../store/actions';
+import { notification as notificationActions } from '../store/actions';
 import { noTextHero } from '../assets';
 import { firebase } from '../utils';
 import { Notifications, Title } from '../components/home';
@@ -84,7 +84,6 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(routeActions.fetchRoutesRequest());
     dispatch(notificationActions.fetchNotificationsRequest({ uid: user.uid }));
   }, [dispatch, user]);
 
