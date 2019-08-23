@@ -82,6 +82,7 @@ const Home = () => {
   const notifications = useSelector(state => state.notification.notifications);
 
   const dispatch = useDispatch();
+  dispatch(routeActions.fetchRoutesRequest());
 
   useEffect(() => {
     dispatch(notificationActions.fetchNotificationsRequest({ uid: user.uid }));

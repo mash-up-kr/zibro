@@ -3,7 +3,7 @@ import {
   all, call, put, take,
 } from 'redux-saga/effects';
 import {
-  compose, chunk, flat, map,
+  compose, chunk, flatten, map,
 } from 'lodash/fp';
 import { busStop } from '../../assets';
 import { selectBusstop } from '../../utils';
@@ -14,62 +14,62 @@ import { route as routeApis } from '../../apis';
 export function* fetchRoutes() {
   while (true) {
     try {
-      /* eslint-disable no-unused-vars */
       const action = yield take(routeActions.FETCH_ROUTES_REQUEST);
+      const startPoint = {
+        x: 126.9850380932383,
+        y: 37.566567545861645
+      };
+      const endPoint = {
+        x: 127.120775,
+        y: 37.403049076341794
+      };
+      const startStops = selectBusstop(startPoint.x, startPoint.y, busStop);
+      const endStops = selectBusstop(endPoint.x, endPoint.y, busStop);
 
-      const startStops = selectBusstop(126.9850380932383, 37.566567545861645, busStop);
-      const endStops = selectBusstop(127.1033181463988, 37.403049076341794, busStop);
+      const responses = yield all([
+        ...map(startStop => call(routeApis.fetchTaxiRoute, {
+          startX: 126.9850380932383,
+          startY: 37.566567545861645,
+          endX: startStop.x,
+          endY: startStop.y,
+        }), startStops),
+        ...map(endStop => call(routeApis.fetchTaxiRoute, {
+          startX: endStop.x,
+          startY: endStop.y,
+          endX: 127.1033181463988,
+          endY: 37.403049076341794,
+        }), endStops),
+      ]);
 
-      // const responses = yield all([
-      //   ...map(startStop => call(routeApis.fetchTaxiRoute, {
-      //     startX: 126.9850380932383,
-      //     startY: 37.566567545861645,
-      //     endX: startStop.x,
-      //     endY: startStop.y,
-      //   }), startStops),
-      //   ...map(endStop => call(routeApis.fetchTaxiRoute, {
-      //     startX: endStop.x,
-      //     startY: endStop.y,
-      //     endX: 127.1033181463988,
-      //     endY: 37.403049076341794,
-      //   }), endStops),
-      // ]);
+      const [starts, destinations] = yield compose(
+        chunk(3),
+        map((response) => {
+          const {
+            properties: { totalDistance, totalTime, taxiFare },
+          } = response.data.features[0]
+          return ({ totalDistance, totalTime, taxiFare });
+        }),
+      )(responses);
 
-      const res = yield call(routeApis.fetchTaxiRoute, {
-        startX: 126.9850380932383,
-        startY: 37.566567545861645,
-        endX: startStops[0].x,
-        endY: startStops[0].y,
-      });
+      const d = new Date();
+      const midnight = d.setUTCHours(15, 30, 0, 0);
 
-
-      // const [starts, destinations] = compose(
-      //   chunk(2),
-      //   map((response) => {
-      //     const {
-      //       features: { properties: { totalDistance, totalTime, taxiFare } },
-      //     } = response.data;
-
-      //     return ({ totalDistance, totalTime, taxiFare });
-      //   }),
-      // )(responses);
-
-      // const results = yield all(flat(map(startStop => map(endStop => call(routeApis.fetchRoute, {
-      //   origin: `${startStop.x},${startStop.y}`,
-      //   destination: `${endStop.x},${endStop.y}`,
-      //   departure_time: Date.now(),
-      // }), endStops), startStops)));
-
-      // const routes = flat(map.convert({ cap: false })(
-      //   (result, index) => map.convert({ cap: false })(
-      //     (r, i) => ({ ...r, start: starts[index], destination: destinations[i] }),
-      //     result,
-      //   ),
-      //   [chunk(3, results)],
-      // ));
+      const results = yield all(flatten(map(startStop => map(endStop => call(routeApis.fetchRoute, {
+        origin: `${startStop.y},${startStop.x}`,
+        destination: `${endStop.y},${endStop.x}`,
+        departure_time: midnight/1000,
+      }), endStops), startStops)));
 
 
-      // console.log('routes', routes);
+      const routes = flatten(map.convert({ cap: false })(
+        (result, index) => map.convert({ cap: false })(
+          (r, i) => ({ ...r, start: starts[index], destination: destinations[i] }),
+          result,
+        ),
+        chunk(3, results),
+      ));
+
+      console.log(routes)
 
       yield put(routeActions.fetchRoutesSuccess({ }));
     } catch (error) {
