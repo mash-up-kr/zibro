@@ -79,4 +79,4 @@ npm run test
 ## 📝 License
 
 Copyright © 2019 [Mash-Up](https://github.com/mash-up-kr).<br />
-This project is [MIT](https://github.com/mash-up-kr/zibro/blob/master/LICENSE) licensed
+This project is [MIT](https://github.com/mash-up-kr/zibro/blob/master/LICENSE) licensed.
