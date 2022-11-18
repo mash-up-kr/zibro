@@ -64,7 +64,7 @@
     "react-hot-loader": "^4.12.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
     "styled-components": "^5.0.0-beta.6-ej4",
